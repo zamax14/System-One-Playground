@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" role="img" aria-label="Laya base vs Jev vs Luna · acierto">
+<rect x="4" y="4" width="875" height="435" rx="12" fill="#0d0d0d"/>
+<rect x="1" y="1" width="875" height="435" rx="12" fill="white" stroke="#0d0d0d" stroke-width="2"/>
+<text x="24" y="36" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="20" font-weight="700" fill="#0d0d0d">Laya base vs Jev vs Luna · acierto</text>
+<text x="24" y="57" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">¿Cuántas decisiones coincidieron con la referencia?</text>
+<rect x="72" y="74" width="15" height="15" rx="3" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="95" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Laya Multilingual</text>
+<rect x="302" y="74" width="15" height="15" rx="3" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="325" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Jev 1.13</text>
+<rect x="532" y="74" width="15" height="15" rx="3" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="555" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">GPT-5.6 Luna</text>
+<line x1="72" x2="840" y1="354.0" y2="354.0" stroke="#d4d5d9"/>
+<text x="62" y="358.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">0 %</text>
+<line x1="72" x2="840" y1="308.4" y2="308.4" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="312.4" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">20 %</text>
+<line x1="72" x2="840" y1="262.8" y2="262.8" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="266.8" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">40 %</text>
+<line x1="72" x2="840" y1="217.2" y2="217.2" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="221.20000000000002" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">60 %</text>
+<line x1="72" x2="840" y1="171.6" y2="171.6" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="175.6" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">80 %</text>
+<line x1="72" x2="840" y1="126.0" y2="126.0" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="130.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">100 %</text>
+<g><title>Laya Multilingual · Categoría: 12/19</title><path d="M107.8,354 V214.0 Q107.8,210.0 111.8,210.0 H163.3 Q167.3,210.0 167.3,214.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="137.6" y="202.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">12/19</text>
+<g><title>Jev 1.13 · Categoría: 19/19</title><path d="M170.3,354 V130.0 Q170.3,126.0 174.3,126.0 H225.7 Q229.7,126.0 229.7,130.0 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="200.0" y="118.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">19/19</text>
+<g><title>GPT-5.6 Luna · Categoría: 19/19</title><path d="M232.7,354 V130.0 Q232.7,126.0 236.7,126.0 H288.2 Q292.2,126.0 292.2,130.0 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="262.4" y="118.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">19/19</text>
+<text x="200.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Categoría</text>
+<g><title>Laya Multilingual · Prioridad exacta: 10/20</title><path d="M363.8,354 V244.0 Q363.8,240.0 367.8,240.0 H419.3 Q423.3,240.0 423.3,244.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="393.6" y="232.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">10/20</text>
+<g><title>Jev 1.13 · Prioridad exacta: 13/20</title><path d="M426.3,354 V209.8 Q426.3,205.8 430.3,205.8 H481.7 Q485.7,205.8 485.7,209.8 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="456.0" y="197.8" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">13/20</text>
+<g><title>GPT-5.6 Luna · Prioridad exacta: 15/20</title><path d="M488.7,354 V187.0 Q488.7,183.0 492.7,183.0 H544.2 Q548.2,183.0 548.2,187.0 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="518.4" y="175.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">15/20</text>
+<text x="456.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Prioridad exacta</text>
+<g><title>Laya Multilingual · Bloqueo: 15/20</title><path d="M619.8,354 V187.0 Q619.8,183.0 623.8,183.0 H675.3 Q679.3,183.0 679.3,187.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="649.6" y="175.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">15/20</text>
+<g><title>Jev 1.13 · Bloqueo: 19/20</title><path d="M682.3,354 V141.4 Q682.3,137.4 686.3,137.4 H737.7 Q741.7,137.4 741.7,141.4 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="712.0" y="129.4" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">19/20</text>
+<g><title>GPT-5.6 Luna · Bloqueo: 19/20</title><path d="M744.7,354 V141.4 Q744.7,137.4 748.7,137.4 H800.2 Q804.2,137.4 804.2,141.4 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="774.4" y="129.4" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">19/20</text>
+<text x="712.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Bloqueo</text>
+<text x="24" y="416" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="10" font-weight="400" fill="#696969">Una prueba de Datzin · 20 tickets ficticios · septiembre de 2026</text>
+</svg>
