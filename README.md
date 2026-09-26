@@ -2,7 +2,7 @@
 
 # System One Playground
 
-**Benchmark de modelos de toma de decisiones sobre texto, con cinco demos para verlos decidir.** La plataforma se llama Pondera.
+**Benchmark de modelos de toma de decisiones sobre texto, con cinco demos para verlos decidir.**
 
 El selector alterna entre [Jev 1.13](https://openrouter.ai/typesafe/jev-1.13), GPT-5.6 Luna
 (ambos vía [OpenRouter](https://openrouter.ai)) y el modelo local
@@ -95,7 +95,7 @@ Cada curso de la ruta dice qué habilidad aporta, y el que no hacía falta queda
 tres objetivos y los tres estudiantes, Laya llega al objetivo en las 9 rutas y 55 de los 59 cursos
 que elige aportan algo, contando los que desbloquean a otro.
 
-<img src="docs/ruta.png" alt="Ruta: el estado del estudiante, los candidatos, las probabilidades y los siete cursos elegidos" width="880">
+<img src="docs/ruta.png" alt="Ruta completada: estado de Ana y cinco cursos elegidos para aprender Data Science" width="880">
 
 ### Herramientas
 
@@ -143,7 +143,7 @@ cocina de los 176 países del mapa, que se colorea mientras llegan los resultado
 una ficha de cocina en español, y al tocarlo ves exactamente el texto que leyó. En Paso a
 paso el mapa avanza país a país, con el panel siguiendo el país que el modelo está leyendo.
 
-<img src="docs/atlas.png" alt="Atlas coloreado para «comida picante», con Indonesia seleccionada" width="880">
+<img src="docs/atlas.png" alt="Atlas coloreado para «comida picante», con el ranking de países a la derecha" width="880">
 
 ### City
 
@@ -195,7 +195,7 @@ deshabilitados con el motivo.
   modelo, así que sus probabilidades son **autodeclaradas** y la interfaz lo marca. Va con
   `reasoning.effort: none`: ~1,4 s por ticket frente a ~3,1 s con `minimal`.
 
-`pondera/models/remote.py` deja cada respuesta en el formato común, así las cinco demos funcionan igual con
+`system_one_playground/models/remote.py` deja cada respuesta en el formato común, así las cinco demos funcionan igual con
 cualquiera. La barra superior muestra lo gastado en la sesión y el Atlas lanza 8 países a la vez
 con los modelos por API, porque 176 llamadas en serie tardan minutos.
 
@@ -264,13 +264,13 @@ criterios de esta demo y 20 tickets no miden precisión general.
 
 1. Fija el ID y la revisión del repositorio de HF. Descarga los archivos con
    [`snapshot_download(repo_id, revision=...)`](https://huggingface.co/docs/huggingface_hub/guides/download).
-   `pondera/models/fastload.py` muestra cómo usar la caché local y limitar los archivos descargados.
+   `system_one_playground/models/fastload.py` muestra cómo usar la caché local y limitar los archivos descargados.
 2. Crea un adaptador con `name`, `checkpoint`, `device`, `status` y
    `predict(state, questions)`. Devuelve `{"answers": ...}` con el contrato común:
    `choice` tiene `choice`, `confidence` y `probabilities`; `score` tiene `score` y
    `probabilities`; `noul` tiene `noul` como probabilidad entre 0 y 1. Consulta
-   `pondera.models.fastload.SharedModel` y la normalización de `pondera/models/remote.py`.
-3. Añade una instancia al diccionario `apps` de `pondera/server.py`, con clave estable y `App(model)`.
+   `system_one_playground.models.fastload.SharedModel` y la normalización de `system_one_playground/models/remote.py`.
+3. Añade una instancia al diccionario `apps` de `system_one_playground/server.py`, con clave estable y `App(model)`.
    Aparecerá en el selector y recibirá las mismas cinco demos. Si usa GPU, implementa
    `release()` para que el servidor pueda liberar sus pesos al cambiar de modelo.
 4. Prueba una respuesta de cada tipo y ejecuta el benchmark con la misma suite. Guarda el ID,
@@ -315,7 +315,7 @@ mismos cursos en el mismo orden, y el enrutador traza las mismas ocho rutas de l
 
 ```mermaid
 flowchart LR
-    B["Navegador<br/>HTML + CSS + JS"] -- "JSON y streaming SSE" --> S["pondera/server.py<br/>http.server"]
+    B["Navegador<br/>HTML + CSS + JS"] -- "JSON y streaming SSE" --> S["system_one_playground/server.py<br/>http.server"]
     S --> T["demos/tickets.py"]
     S --> R["demos/courses.py"]
     S --> H["demos/tools.py"]
@@ -324,7 +324,7 @@ flowchart LR
     T & R & H & A & C --> M["Modelo seleccionado"]
     M --> L["models/fastload.py<br/>Laya"]
     M --> O["models/remote.py<br/>Jev y GPT vía OpenRouter"]
-    S --> BM["pondera/benchmark.py"] --> M
+    S --> BM["system_one_playground/benchmark.py"] --> M
 ```
 
 - **Frontend sin build.** Las páginas se sirven directamente, sin paso de compilación.
@@ -332,7 +332,7 @@ flowchart LR
   SSE en cuanto sale. Una consulta nueva cancela la anterior en el servidor, y cerrar la pestaña del
   benchmark detiene las llamadas pendientes.
 - **Un contrato para todos.** Cada modelo expone `predict(state, questions)` y `normalize` en
-  `pondera/models/remote.py` adapta las respuestas remotas al formato común.
+  `system_one_playground/models/remote.py` adapta las respuestas remotas al formato común.
 - **Un estado por modelo.** Las cinco demos usan el modelo seleccionado y conservan sus estados
   por separado. Laya comprueba el contexto antes de inferir porque lo truncaría en silencio.
 
@@ -379,7 +379,7 @@ Cada decisión de diseño salió de medir con el modelo real:
 - **GPU sin compilar nada.** torch 2.14 manda una operación del encoder a Triton, que necesita
   `Python.h` para compilar. Con su interruptor oficial `TORCH_DISABLE_NATIVE_JIT=1` usa la operación
   normal de torch, así que no hace falta instalar `python3-dev`. Torch lo lee al importarse, por eso
-  `pondera/models/fastload.py` lo activa antes.
+  `system_one_playground/models/fastload.py` lo activa antes.
 
 Donde no llega, también se cuenta. El Atlas confunde el vino de uva con el vino de palma, «a la
 parrilla» queda enterrado en el texto libre, y el enrutador de herramientas tiene su propia
@@ -389,7 +389,7 @@ sección de costuras más arriba.
 
 ```
 ├── server.py           comando de arranque
-├── pondera/
+├── system_one_playground/
 │   ├── server.py       servidor y API
 │   ├── benchmark.py    suite, métricas y eventos
 │   ├── demos/          escenarios y reglas de decisión
@@ -426,5 +426,5 @@ OpenRouter sin red (esquema, normalización, costo) y la proyección y los color
 - **Tipografía** [Nunito](https://github.com/googlefonts/nunito), SIL Open Font License 1.1.
 - **Fichas de cocina, tickets, cursos y herramientas** redactados con Claude: simplifican y son
   ficticios. Las fichas, detalladas en [assets/README.md](assets/README.md); lo demás vive en
-  `pondera/demos/tickets.py`, `pondera/demos/courses.py` y `pondera/demos/tools.py`.
+  `system_one_playground/demos/tickets.py`, `system_one_playground/demos/courses.py` y `system_one_playground/demos/tools.py`.
 - **Código** bajo licencia [MIT](LICENSE).
