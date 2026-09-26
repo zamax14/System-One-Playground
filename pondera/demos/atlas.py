@@ -7,9 +7,9 @@ import queue
 import sys
 import threading
 import time
-from fastload import CHECKPOINT
+from pondera.models.fastload import CHECKPOINT
 
-ASSETS = Path(__file__).resolve().parent / "assets"
+ASSETS = Path(__file__).resolve().parents[2] / "assets"
 BATCH_SIZE = 8
 MAX_QUERY = 500
 PRIOR_PATH = ASSETS / "gastronomia_prior.json"
@@ -78,7 +78,7 @@ def load_prior(countries):
     data = json.loads(PRIOR_PATH.read_text(encoding="utf-8")) if PRIOR_PATH.exists() else {}
     if (data.get("model") != CHECKPOINT or data.get("question") != QUESTION or data.get("queries") != list(CALIBRATION)
             or set(data.get("prior", {})) != {c["id"] for c in countries}):
-        raise ValueError("La calibración falta o no coincide con las fichas; ejecuta: python3 atlas.py calibrar")
+        raise ValueError("La calibración falta o no coincide con las fichas; ejecuta: python3 -m pondera.demos.atlas calibrar")
     return data["prior"]
 
 
@@ -160,7 +160,7 @@ class Evaluator:
 
 
 if __name__ == "__main__" and sys.argv[1:] == ["calibrar"]:
-    from fastload import SharedModel
+    from pondera.models.fastload import SharedModel
     countries = load_countries()
     calibrate(countries, SharedModel())
     print(f"Guardado {PRIOR_PATH.name} con {len(countries)} países.")

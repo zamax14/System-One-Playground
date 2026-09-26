@@ -195,7 +195,7 @@ deshabilitados con el motivo.
   modelo, así que sus probabilidades son **autodeclaradas** y la interfaz lo marca. Va con
   `reasoning.effort: none`: ~1,4 s por ticket frente a ~3,1 s con `minimal`.
 
-`remote.py` deja cada respuesta en el formato común, así las cinco demos funcionan igual con
+`pondera/models/remote.py` deja cada respuesta en el formato común, así las cinco demos funcionan igual con
 cualquiera. La barra superior muestra lo gastado en la sesión y el Atlas lanza 8 países a la vez
 con los modelos por API, porque 176 llamadas en serie tardan minutos.
 
@@ -264,13 +264,13 @@ criterios de esta demo y 20 tickets no miden precisión general.
 
 1. Fija el ID y la revisión del repositorio de HF. Descarga los archivos con
    [`snapshot_download(repo_id, revision=...)`](https://huggingface.co/docs/huggingface_hub/guides/download).
-   `fastload.py` muestra cómo usar la caché local y limitar los archivos descargados.
+   `pondera/models/fastload.py` muestra cómo usar la caché local y limitar los archivos descargados.
 2. Crea un adaptador con `name`, `checkpoint`, `device`, `status` y
    `predict(state, questions)`. Devuelve `{"answers": ...}` con el contrato común:
    `choice` tiene `choice`, `confidence` y `probabilities`; `score` tiene `score` y
    `probabilities`; `noul` tiene `noul` como probabilidad entre 0 y 1. Consulta
-   `fastload.SharedModel` y la normalización de `remote.py`.
-3. Añade una instancia al diccionario `apps` de `server.py`, con clave estable y `App(model)`.
+   `pondera.models.fastload.SharedModel` y la normalización de `pondera/models/remote.py`.
+3. Añade una instancia al diccionario `apps` de `pondera/server.py`, con clave estable y `App(model)`.
    Aparecerá en el selector y recibirá las mismas cinco demos. Si usa GPU, implementa
    `release()` para que el servidor pueda liberar sus pesos al cambiar de modelo.
 4. Prueba una respuesta de cada tipo y ejecuta el benchmark con la misma suite. Guarda el ID,
@@ -315,16 +315,16 @@ mismos cursos en el mismo orden, y el enrutador traza las mismas ocho rutas de l
 
 ```mermaid
 flowchart LR
-    B["Navegador<br/>HTML + CSS + JS"] -- "JSON y streaming SSE" --> S["server.py<br/>http.server"]
-    S --> T["tickets.py"]
-    S --> R["courses.py"]
-    S --> H["tools.py"]
-    S --> A["atlas.py"]
-    S --> C["city.py"]
+    B["Navegador<br/>HTML + CSS + JS"] -- "JSON y streaming SSE" --> S["pondera/server.py<br/>http.server"]
+    S --> T["demos/tickets.py"]
+    S --> R["demos/courses.py"]
+    S --> H["demos/tools.py"]
+    S --> A["demos/atlas.py"]
+    S --> C["demos/city.py"]
     T & R & H & A & C --> M["Modelo seleccionado"]
-    M --> L["fastload.py<br/>Laya"]
-    M --> O["remote.py<br/>Jev y GPT vía OpenRouter"]
-    S --> BM["benchmark.py"] --> M
+    M --> L["models/fastload.py<br/>Laya"]
+    M --> O["models/remote.py<br/>Jev y GPT vía OpenRouter"]
+    S --> BM["pondera/benchmark.py"] --> M
 ```
 
 - **Frontend sin build.** Las páginas se sirven directamente, sin paso de compilación.
@@ -332,7 +332,7 @@ flowchart LR
   SSE en cuanto sale. Una consulta nueva cancela la anterior en el servidor, y cerrar la pestaña del
   benchmark detiene las llamadas pendientes.
 - **Un contrato para todos.** Cada modelo expone `predict(state, questions)` y `normalize` en
-  `remote.py` adapta las respuestas remotas al formato común.
+  `pondera/models/remote.py` adapta las respuestas remotas al formato común.
 - **Un estado por modelo.** Las cinco demos usan el modelo seleccionado y conservan sus estados
   por separado. Laya comprueba el contexto antes de inferir porque lo truncaría en silencio.
 
@@ -379,7 +379,7 @@ Cada decisión de diseño salió de medir con el modelo real:
 - **GPU sin compilar nada.** torch 2.14 manda una operación del encoder a Triton, que necesita
   `Python.h` para compilar. Con su interruptor oficial `TORCH_DISABLE_NATIVE_JIT=1` usa la operación
   normal de torch, así que no hace falta instalar `python3-dev`. Torch lo lee al importarse, por eso
-  `fastload.py` lo activa antes.
+  `pondera/models/fastload.py` lo activa antes.
 
 Donde no llega, también se cuenta. El Atlas confunde el vino de uva con el vino de palma, «a la
 parrilla» queda enterrado en el texto libre, y el enrutador de herramientas tiene su propia
@@ -388,20 +388,17 @@ sección de costuras más arriba.
 ## Estructura
 
 ```
-├── server.py        servidor y API
-├── fastload.py      carga rápida y compartida de Laya, en CPU o GPU, y lectura de llaves
-├── remote.py        Jev y GPT vía OpenRouter, y la normalización de respuestas
-├── benchmark.py     suite de tickets, métricas y eventos del benchmark
-├── scripts/         herramientas de benchmark
-├── tickets.py       Mesa de ayuda: tickets, preguntas y semáforo
-├── courses.py       Ruta: catálogo, objetivos, prerrequisitos y bucle de decisión
-├── tools.py         Herramientas: catálogo MCP, preguntas por vuelta y encadenado de argumentos
-├── atlas.py         Atlas: fichas, calibración por país y barridos cancelables
-├── city.py          City: mapa, reglas, protección y sorteo
-├── assets/          mapa, fichas de cocina y calibración
-├── web/             páginas, estilos y tipografía
-├── tests/           pruebas sin descargar el modelo
-└── docs/            capturas de este README
+├── server.py           comando de arranque
+├── pondera/
+│   ├── server.py       servidor y API
+│   ├── benchmark.py    suite, métricas y eventos
+│   ├── demos/          escenarios y reglas de decisión
+│   └── models/         adaptadores de Laya y OpenRouter
+├── scripts/            herramientas para medir y graficar
+├── assets/             datos del Atlas y gráficas del benchmark
+├── web/                páginas, estilos y resultados de ejemplo
+├── tests/              pruebas sin descargar el modelo
+└── docs/               capturas de este README
 ```
 
 ## Pruebas
@@ -429,5 +426,5 @@ OpenRouter sin red (esquema, normalización, costo) y la proyección y los color
 - **Tipografía** [Nunito](https://github.com/googlefonts/nunito), SIL Open Font License 1.1.
 - **Fichas de cocina, tickets, cursos y herramientas** redactados con Claude: simplifican y son
   ficticios. Las fichas, detalladas en [assets/README.md](assets/README.md); lo demás vive en
-  `tickets.py`, `courses.py` y `tools.py`.
+  `pondera/demos/tickets.py`, `pondera/demos/courses.py` y `pondera/demos/tools.py`.
 - **Código** bajo licencia [MIT](LICENSE).

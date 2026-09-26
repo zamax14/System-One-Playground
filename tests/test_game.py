@@ -1,7 +1,7 @@
 """Reglas de City sin GPU ni descargas."""
 import unittest
 import random
-from city import ACTIONS, COLS, ROWS, DIRECTIONS, LIGHTS, Trip, drive, legal_moves, random_scenario, route, validate_answer
+from pondera.demos.city import ACTIONS, COLS, ROWS, DIRECTIONS, LIGHTS, Trip, drive, legal_moves, random_scenario, route, validate_answer
 
 
 class GameChecks(unittest.TestCase):

@@ -1,7 +1,7 @@
 """Enrutado de herramientas sin modelo: reglas del bucle y encadenado de prerrequisitos."""
 import unittest
 
-from tools import CATALOG, DATA, EXAMPLES, MAX_TURNS, Route, SERVERS, TOOLS, catalog, public
+from pondera.demos.tools import CATALOG, DATA, EXAMPLES, MAX_TURNS, Route, SERVERS, TOOLS, catalog, public
 
 
 def fake(server, tool, covered=0.0):

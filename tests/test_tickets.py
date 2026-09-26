@@ -1,8 +1,8 @@
 """Mesa de ayuda sin modelo."""
 import unittest
 
-import tickets
-from tickets import CATEGORIES, PRIORITIES, TICKETS, assign, light, public, ticket_state
+from pondera.demos import tickets
+from pondera.demos.tickets import CATEGORIES, PRIORITIES, TICKETS, assign, light, public, ticket_state
 
 
 def answer(category="redes", confidence=.9, score=2.2):

@@ -8,6 +8,6 @@
   conocimiento general, sin verificar. Simplifica y puede tener errores. El campo opcional
   `nombre` corrige el nombre de Natural Earth cuando está anticuado (Taiwán, Esuatini).
 - `gastronomia_prior.json`: el «sí» medio de Laya para cada país en las consultas de calibración.
-  Lo genera `python3 atlas.py calibrar`; depende de las fichas, de la pregunta y del modelo.
+  Lo genera `python3 -m pondera.demos.atlas calibrar`; depende de las fichas, de la pregunta y del modelo.
 
 Las puntuaciones son inferencias de Laya; no provienen de estas bases.

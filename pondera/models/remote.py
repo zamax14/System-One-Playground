@@ -9,7 +9,7 @@ import time
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-from fastload import secret
+from pondera.models.fastload import secret
 
 OPENROUTER = "https://openrouter.ai/api/v1"
 NO_KEY = "Falta la llave de OpenRouter: define OPENROUTER_API_KEY o crea el archivo «openrouter»"
