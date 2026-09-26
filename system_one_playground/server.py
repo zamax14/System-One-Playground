@@ -1,4 +1,4 @@
-"""Servidor local de Pondera: sirve web/ y pone los modelos detrás de una API pequeña.
+"""Servidor local de System One Playground: sirve web/ y pone los modelos detrás de una API pequeña.
 
     python server.py            # abre http://127.0.0.1:8000
     python server.py --port 9000 --no-browser
@@ -20,10 +20,10 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-from pondera import benchmark
-from pondera.demos.atlas import MAX_QUERY, Evaluator, country_state, load_countries
-from pondera.demos.city import MAP, Trip, drive, random_scenario
-from pondera.demos import courses, tickets, tools
+from system_one_playground import benchmark
+from system_one_playground.demos.atlas import MAX_QUERY, Evaluator, country_state, load_countries
+from system_one_playground.demos.city import MAP, Trip, drive, random_scenario
+from system_one_playground.demos import courses, tickets, tools
 
 WEB = Path(__file__).resolve().parents[1] / "web"
 PAGES = {"/": "index.html", "/atlas": "atlas.html", "/city": "city.html", "/tickets": "tickets.html",
@@ -341,10 +341,10 @@ def warm(app):
 
 
 def build_apps(device="auto", remote_only=False):
-    from pondera.models.remote import ChatModel, JevModel
+    from system_one_playground.models.remote import ChatModel, JevModel
     apps = {}
     if not remote_only:
-        from pondera.models.fastload import SharedModel
+        from system_one_playground.models.fastload import SharedModel
         apps["laya"] = App(SharedModel(device=device))
     apps["jev"] = App(JevModel(), prior=defaultdict(float))
     apps["gpt-luna"] = App(ChatModel("openai/gpt-5.6-luna", "GPT-5.6 Luna"), prior=defaultdict(float))
@@ -352,7 +352,7 @@ def build_apps(device="auto", remote_only=False):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Pondera: benchmark de decisiones sobre texto")
+    parser = argparse.ArgumentParser(description="System One Playground: benchmark de decisiones sobre texto")
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--no-browser", action="store_true", help="no abrir el navegador")
     parser.add_argument("--remote-only", action="store_true", help="solo Jev y Luna; no requiere instalar Laya ni PyTorch")
@@ -368,7 +368,7 @@ def main():
     # SIGTERM (kill, systemd, cerrar la terminal) sale como Ctrl+C y libera los recursos.
     signal.signal(signal.SIGTERM, lambda *_: sys.exit(0))
     url = f"http://127.0.0.1:{server.server_address[1]}"
-    print(f"Pondera en {url} (Ctrl+C para salir)", flush=True)
+    print(f"System One Playground en {url} (Ctrl+C para salir)", flush=True)
     if "laya" in apps:
         threading.Thread(target=warm, args=(apps["laya"],), daemon=True).start()
     if not args.no_browser:

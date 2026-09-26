@@ -1,6 +1,6 @@
 """Arranque del servidor local: python3 server.py [opciones]."""
 
-from pondera.server import main
+from system_one_playground.server import main
 
 
 if __name__ == "__main__":
