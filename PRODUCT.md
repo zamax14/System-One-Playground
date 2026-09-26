@@ -1,4 +1,4 @@
-# Pondera
+# System One Playground
 
 ## Register
 
@@ -10,7 +10,7 @@ Personas que quieren observar y comparar cómo varios modelos toman decisiones s
 
 ## Product Purpose
 
-Pondera reúne cinco demos y un benchmark de decisiones sobre texto. Muestra el estado, las opciones, las decisiones, las referencias y las mediciones para que el comportamiento de cada modelo se pueda juzgar.
+System One Playground reúne cinco demos y un benchmark de decisiones sobre texto. Muestra el estado, las opciones, las decisiones, las referencias y las mediciones para que el comportamiento de cada modelo se pueda juzgar.
 
 ## Brand Personality
 

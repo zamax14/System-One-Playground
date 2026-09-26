@@ -7,8 +7,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from pondera.demos.city import ACTIONS
-from pondera.server import App, build_apps, serve
+from system_one_playground.demos.city import ACTIONS
+from system_one_playground.server import App, build_apps, serve
 
 
 class FakeModel:

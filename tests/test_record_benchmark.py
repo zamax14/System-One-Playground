@@ -5,8 +5,8 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
 
-from pondera import benchmark
-from pondera.models.fastload import ROOT, SharedModel
+from system_one_playground import benchmark
+from system_one_playground.models.fastload import ROOT, SharedModel
 from scripts.record_benchmark import record
 from tests.test_server import FakeModel
 

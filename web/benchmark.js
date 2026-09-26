@@ -166,7 +166,7 @@ $("#only-misses").addEventListener("change", event => $("#table").classList.togg
 
 $("#download").addEventListener("click", () => {
   const url = URL.createObjectURL(new Blob([JSON.stringify(run, null, 2)], { type: "application/json" }));
-  const link = el("a", { href: url, download: `pondera-${run.suite}-${run.created_at.slice(0, 10)}.json` });
+  const link = el("a", { href: url, download: `system-one-playground-${run.suite}-${run.created_at.slice(0, 10)}.json` });
   link.click();
   URL.revokeObjectURL(url);
 });

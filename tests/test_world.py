@@ -1,7 +1,7 @@
 import threading
 import unittest
 
-from pondera.demos.atlas import FICHA, SCALES, Evaluator, country_state, extract_scores, load_countries, load_prior, questions_for, relative
+from system_one_playground.demos.atlas import FICHA, SCALES, Evaluator, country_state, extract_scores, load_countries, load_prior, questions_for, relative
 
 
 class Model:
