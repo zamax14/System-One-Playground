@@ -9,9 +9,9 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-import benchmark
-from remote import ChatModel, JevModel
-from tickets import TICKETS, ticket_state
+from pondera import benchmark
+from pondera.models.remote import ChatModel, JevModel
+from pondera.demos.tickets import TICKETS, ticket_state
 
 RESULTS = ROOT / "web" / "results"
 
@@ -90,7 +90,7 @@ def main():
     args = parser.parse_args()
     key = args.model
     if args.model == "laya":
-        from fastload import SharedModel
+        from pondera.models.fastload import SharedModel
         model = SharedModel(device=args.device, path=args.checkpoint and args.checkpoint.resolve(),
                             name="Laya reentrenada" if args.checkpoint else None)
         key = "laya-mesa" if args.checkpoint else "laya"

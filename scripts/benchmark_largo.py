@@ -22,11 +22,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-import fastload  # noqa: E402  Antes que torch.
+from pondera.models import fastload  # noqa: E402  Antes que torch.
 
-import benchmark  # noqa: E402
-from remote import OPENROUTER, ChatModel, JevModel, post  # noqa: E402
-from tickets import TICKETS, ticket_state  # noqa: E402
+from pondera import benchmark  # noqa: E402
+from pondera.models.remote import OPENROUTER, ChatModel, JevModel, post  # noqa: E402
+from pondera.demos.tickets import TICKETS, ticket_state  # noqa: E402
 
 NOISE = ROOT / "assets" / "benchmark" / "ruido.json"
 RESULTS = ROOT / "web" / "results" / "largo.json"

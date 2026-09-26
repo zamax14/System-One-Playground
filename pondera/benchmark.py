@@ -4,7 +4,7 @@ import json
 import statistics
 import time
 
-from tickets import PRIORITIES, QUESTIONS as DESK_QUESTIONS, TICKETS, light, ticket_state
+from pondera.demos.tickets import PRIORITIES, QUESTIONS as DESK_QUESTIONS, TICKETS, light, ticket_state
 
 SUITE = "tickets-v2"
 # Solo en el benchmark: con ella las tres clases de pregunta (choice, score, noul) tienen referencia.
