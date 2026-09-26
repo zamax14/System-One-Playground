@@ -4,8 +4,8 @@ import json
 import unittest
 from unittest import mock
 
-from pondera.models import remote
-from pondera.models.remote import ChatModel, JevModel, normalize, schema
+from system_one_playground.models import remote
+from system_one_playground.models.remote import ChatModel, JevModel, normalize, schema
 
 QUESTIONS = {"cat": {"type": "choice", "instructions": "?", "criteria": {"a": "A", "b": "B"}},
              "nivel": {"type": "score", "instructions": "?", "criteria": ["bajo", "medio", "alto"]},

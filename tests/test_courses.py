@@ -1,7 +1,7 @@
 """Ruta de aprendizaje sin modelo: reglas del bucle de decisión."""
 import unittest
 
-from pondera.demos.courses import CATALOG, COURSES, GOALS, MAX_STEPS, PROFILES, Roadmap, SKILLS
+from system_one_playground.demos.courses import CATALOG, COURSES, GOALS, MAX_STEPS, PROFILES, Roadmap, SKILLS
 
 
 def chooser(pick):
