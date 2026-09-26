@@ -226,19 +226,49 @@ Las gráficas usan las mismas corridas y el estilo del repositorio de referencia
 
 <img src="assets/benchmark/cost.png" width="760" alt="Costo de API en dólares: las dos Laya cero, Jev y Luna de pago">
 
-#### Comparativas por tema
+#### Series de comparativas
 
 Las gráficas de dos y tres modelos usan la misma suite y huella. La comparación de tres modelos
 incluye **Laya Multilingual base en GPU**, Jev y Luna; no incluye la Laya reentrenada.
 
-| Tema | Jev y Luna | Laya base, Jev y Luna |
+| Tema | [Jev y Luna](assets/comparativas/jev-luna/) | [Laya base, Jev y Luna](assets/comparativas/laya-jev-luna/) |
 |---|---|---|
-| Acierto | [PNG](assets/comparativas/acierto/jev-luna.png) · [SVG](assets/comparativas/acierto/jev-luna.svg) | [PNG](assets/comparativas/acierto/laya-jev-luna.png) · [SVG](assets/comparativas/acierto/laya-jev-luna.svg) |
-| Latencia | [PNG](assets/comparativas/latencia/jev-luna.png) · [SVG](assets/comparativas/latencia/jev-luna.svg) | [PNG](assets/comparativas/latencia/laya-jev-luna.png) · [SVG](assets/comparativas/latencia/laya-jev-luna.svg) |
-| Costo de API | [PNG](assets/comparativas/costo/jev-luna.png) · [SVG](assets/comparativas/costo/jev-luna.svg) | [PNG](assets/comparativas/costo/laya-jev-luna.png) · [SVG](assets/comparativas/costo/laya-jev-luna.svg) |
+| Acierto | [PNG](assets/comparativas/jev-luna/acierto.png) · [SVG](assets/comparativas/jev-luna/acierto.svg) | [PNG](assets/comparativas/laya-jev-luna/acierto.png) · [SVG](assets/comparativas/laya-jev-luna/acierto.svg) |
+| Latencia | [PNG](assets/comparativas/jev-luna/latencia.png) · [SVG](assets/comparativas/jev-luna/latencia.svg) | [PNG](assets/comparativas/laya-jev-luna/latencia.png) · [SVG](assets/comparativas/laya-jev-luna/latencia.svg) |
+| Costo de API | [PNG](assets/comparativas/jev-luna/costo.png) · [SVG](assets/comparativas/jev-luna/costo.svg) | [PNG](assets/comparativas/laya-jev-luna/costo.png) · [SVG](assets/comparativas/laya-jev-luna/costo.svg) |
 
 La latencia de Laya es local en GPU; la de Jev y Luna incluye red. Los $0 de Laya son solo costo de
 API: no incluyen hardware ni electricidad.
+
+#### Enrutamiento de herramientas con Laya ajustada
+
+La tercera serie está en [`assets/comparativas/laya-ft-jev-luna/`](assets/comparativas/laya-ft-jev-luna/):
+[acierto](assets/comparativas/laya-ft-jev-luna/acierto.png),
+[latencia](assets/comparativas/laya-ft-jev-luna/latencia.png) y
+[costo de API](assets/comparativas/laya-ft-jev-luna/costo.png) (también hay SVG).
+Mide una tarea distinta de los tickets anteriores: decidir si responder, pedir datos o usar herramientas,
+y elegir entre web, calendario, correo, archivos y base de datos. Los 120 casos de prueba escritos a mano
+son de [Laya-Finetune](https://github.com/zamax14/Laya-Finetune). Los cinco modelos respondieron las
+mismas preguntas y casos (`fingerprint: 72a19374dfd9`).
+
+| Modelo | Decisión completa | Acción | Latencia p50 | Costo de API |
+|---|---:|---:|---:|---:|
+| Laya Multilingual base · 1k | 12/120 | 30/120 | 26 ms | $0 |
+| Laya FT · 1k | 67/120 | 93/120 | 26 ms | $0 |
+| Laya FT · 8k | 78/120 | 99/120 | 27 ms | $0 |
+| Jev 1.13 | 64/120 | 114/120 | 502 ms | $0.003090 |
+| GPT-5.6 Luna | 103/120 | 119/120 | 1541 ms | $0.027999 |
+
+La decisión completa exige acertar la acción y las cinco herramientas. **1k y 8k son los límites
+configurados de los checkpoints**, no longitudes de entrada medidas aquí: esta prueba usa solicitudes
+cortas. Falta el checkpoint FT 32k. La latencia de Laya se midió en una RTX 4050 local; la de las APIs
+incluye red. $0 de API no equivale a costo total cero.
+
+Para repetir esta serie, instala el entorno de `Laya-Finetune`, conserva sus dos checkpoints en
+`.model-cache/` y ejecuta cada modelo con `scripts/benchmark_tool_routing.py` y
+`--task /ruta/a/Laya-Finetune/tasks/tool_routing.yaml`. `scripts/plot_tool_routing.py --png` regenera
+las imágenes desde los resultados locales o desde el
+[resumen publicado](assets/comparativas/laya-ft-jev-luna/resultados.json).
 
 Para regenerar los SVG y PNG desde los JSON guardados:
 `.venv/bin/python scripts/plot_benchmark.py --png` (requiere Chrome para los PNG). La Laya

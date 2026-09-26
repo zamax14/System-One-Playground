@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" role="img" aria-label="Tiempo por decisión">
+<rect x="4" y="4" width="875" height="435" rx="12" fill="#0d0d0d"/>
+<rect x="1" y="1" width="875" height="435" rx="12" fill="white" stroke="#0d0d0d" stroke-width="2"/>
+<text x="24" y="36" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="20" font-weight="700" fill="#0d0d0d">Tiempo por decisión</text>
+<text x="24" y="57" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">Laya en GPU local; Jev y Luna incluyen la red</text>
+<rect x="72" y="74" width="15" height="15" rx="3" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="95" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Laya base · 1k</text>
+<rect x="224" y="74" width="15" height="15" rx="3" fill="#2fbf94" stroke="#0d0d0d" stroke-width="2"/>
+<text x="247" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Laya FT · 1k</text>
+<rect x="376" y="74" width="15" height="15" rx="3" fill="#7757e4" stroke="#0d0d0d" stroke-width="2"/>
+<text x="399" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Laya FT · 8k</text>
+<rect x="528" y="74" width="15" height="15" rx="3" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="551" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Jev</text>
+<rect x="680" y="74" width="15" height="15" rx="3" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="703" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Luna</text>
+<line x1="72" x2="840" y1="354.0" y2="354.0" stroke="#d4d5d9"/>
+<text x="62" y="358.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">0 ms</text>
+<line x1="72" x2="840" y1="308.4" y2="308.4" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="312.4" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">600 ms</text>
+<line x1="72" x2="840" y1="262.8" y2="262.8" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="266.8" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">1200 ms</text>
+<line x1="72" x2="840" y1="217.2" y2="217.2" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="221.20000000000002" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">1800 ms</text>
+<line x1="72" x2="840" y1="171.6" y2="171.6" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="175.6" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">2400 ms</text>
+<line x1="72" x2="840" y1="126.0" y2="126.0" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="130.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">3000 ms</text>
+<g><title>Laya base · 1k · p50: 26 ms</title><path d="M149.0,354 V354.0 Q149.0,352.0 151.0,352.0 H190.6 Q192.6,352.0 192.6,354.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="170.8" y="344.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">26 ms</text>
+<g><title>Laya FT · 1k · p50: 26 ms</title><path d="M195.6,354 V354.0 Q195.6,352.0 197.6,352.0 H237.2 Q239.2,352.0 239.2,354.0 V354 Z" fill="#2fbf94" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="217.4" y="344.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">26 ms</text>
+<g><title>Laya FT · 8k · p50: 27 ms</title><path d="M242.2,354 V354.0 Q242.2,351.9 244.3,351.9 H283.7 Q285.8,351.9 285.8,354.0 V354 Z" fill="#7757e4" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="264.0" y="343.9" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">27 ms</text>
+<g><title>Jev · p50: 502 ms</title><path d="M288.8,354 V319.9 Q288.8,315.9 292.8,315.9 H328.4 Q332.4,315.9 332.4,319.9 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="310.6" y="307.9" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">502 ms</text>
+<g><title>Luna · p50: 1541 ms</title><path d="M335.4,354 V240.9 Q335.4,236.9 339.4,236.9 H375.0 Q379.0,236.9 379.0,240.9 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="357.2" y="228.9" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">1541 ms</text>
+<text x="264.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">p50</text>
+<g><title>Laya base · 1k · p95: 33 ms</title><path d="M533.0,354 V354.0 Q533.0,351.5 535.5,351.5 H574.1 Q576.6,351.5 576.6,354.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="554.8" y="343.5" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">33 ms</text>
+<g><title>Laya FT · 1k · p95: 33 ms</title><path d="M579.6,354 V354.0 Q579.6,351.5 582.1,351.5 H620.7 Q623.2,351.5 623.2,354.0 V354 Z" fill="#2fbf94" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="601.4" y="343.5" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">33 ms</text>
+<g><title>Laya FT · 8k · p95: 72 ms</title><path d="M626.2,354 V352.6 Q626.2,348.6 630.2,348.6 H665.8 Q669.8,348.6 669.8,352.6 V354 Z" fill="#7757e4" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="648.0" y="340.6" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">72 ms</text>
+<g><title>Jev · p95: 583 ms</title><path d="M672.8,354 V313.7 Q672.8,309.7 676.8,309.7 H712.4 Q716.4,309.7 716.4,313.7 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="694.6" y="301.7" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">583 ms</text>
+<g><title>Luna · p95: 1944 ms</title><path d="M719.4,354 V210.2 Q719.4,206.2 723.4,206.2 H759.0 Q763.0,206.2 763.0,210.2 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="741.2" y="198.2" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">1944 ms</text>
+<text x="648.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">p95</text>
+<text x="24" y="416" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="10" font-weight="400" fill="#696969">120 solicitudes de prueba · rutas de herramientas · Datzin</text>
+</svg>
