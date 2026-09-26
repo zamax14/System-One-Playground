@@ -1,4 +1,4 @@
-"""Atlas de gastronomía: Laya puntúa la cocina de cada país, por lotes y de forma cancelable."""
+"""Atlas de gastronomía: el modelo puntúa la cocina de cada país por lotes cancelables."""
 from concurrent.futures import ThreadPoolExecutor
 import json
 import math

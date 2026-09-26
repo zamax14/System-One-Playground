@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="875" height="435" rx="12" fill="#0d0d0d"/>
 <rect x="1" y="1" width="875" height="435" rx="12" fill="white" stroke="#0d0d0d" stroke-width="2"/>
 <text x="24" y="36" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="20" font-weight="700" fill="#0d0d0d">Jev vs Luna · costo de API</text>
-<text x="24" y="57" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">USD cobrados por 21 llamadas: calentamiento + 20 tickets</text>
+<text x="24" y="57" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">Dólares por 20 tickets y una llamada de preparación</text>
 <rect x="72" y="74" width="15" height="15" rx="3" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
 <text x="95" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Jev 1.13</text>
 <rect x="302" y="74" width="15" height="15" rx="3" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
@@ -17,10 +17,10 @@
 <text x="62" y="187.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">$0.006</text>
 <line x1="72" x2="840" y1="126.0" y2="126.0" stroke="#d4d5d9" stroke-dasharray="3 4"/>
 <text x="62" y="130.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">$0.008</text>
-<g><title>Jev 1.13 · Corrida completa: $0.000708</title><path d="M341.0,354 V337.8 Q341.0,333.8 345.0,333.8 H450.5 Q454.5,333.8 454.5,337.8 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<g><title>Jev 1.13 · Prueba completa: $0.000708</title><path d="M341.0,354 V337.8 Q341.0,333.8 345.0,333.8 H450.5 Q454.5,333.8 454.5,337.8 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="397.8" y="325.8" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">$0.000708</text>
-<g><title>GPT-5.6 Luna · Corrida completa: $0.006040</title><path d="M457.5,354 V185.9 Q457.5,181.9 461.5,181.9 H567.0 Q571.0,181.9 571.0,185.9 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<g><title>GPT-5.6 Luna · Prueba completa: $0.006040</title><path d="M457.5,354 V185.9 Q457.5,181.9 461.5,181.9 H567.0 Q571.0,181.9 571.0,185.9 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="514.2" y="173.9" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">$0.006040</text>
-<text x="456.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Corrida completa</text>
-<text x="24" y="416" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="10" font-weight="400" fill="#696969">tickets-v2 · huella 676cc9872e85 · 20 tickets, 3 preguntas por ticket · 24 sep 2026</text>
+<text x="456.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Prueba completa</text>
+<text x="24" y="416" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="10" font-weight="400" fill="#696969">Una prueba de Datzin · 20 tickets · septiembre de 2026</text>
 </svg>

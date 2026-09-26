@@ -1,4 +1,4 @@
-"""Mapa dirigido, reglas de la simulación y el paso de decisión con Laya."""
+"""Mapa dirigido, reglas de la simulación y el paso de decisión del modelo."""
 from collections import deque
 from dataclasses import dataclass, field
 import math
@@ -46,7 +46,7 @@ def validate_answer(answer):
 
 
 def drive(trip, predict):
-    """Una decisión: estado → Laya → protección. Si Laya falla, el viaje no cambia."""
+    """Una decisión: estado → modelo → protección. Si falla, el viaje no cambia."""
     state = trip.snapshot()
     started = time.perf_counter()
     answer = validate_answer(predict(state, QUESTION)["answers"]["accion"])
@@ -96,7 +96,7 @@ class Trip:
         return self.destination if self.onboard else self.passenger
 
     def green(self, node, action):
-        # El tiempo de simulación no avanza mientras Laya calcula.
+        # El tiempo de simulación no avanza mientras el modelo calcula.
         horizontal_green = (self.tick + node[0] + node[1]) % 4 < 2
         return horizontal_green == (action in ("este", "oeste"))
 

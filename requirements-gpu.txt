@@ -3,4 +3,3 @@
 --extra-index-url https://download.pytorch.org/whl/cu130
 torch==2.14.0+cu130
 laya==0.3.5
-pydantic>=2.7

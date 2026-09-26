@@ -4,4 +4,3 @@
 torch==2.14.0+cpu; sys_platform == "linux"
 torch==2.14.0; sys_platform != "linux"
 laya==0.3.5
-pydantic>=2.7

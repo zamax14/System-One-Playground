@@ -17,7 +17,7 @@ def reply(payload):
 
 
 class RemoteChecks(unittest.TestCase):
-    def test_normalize_fills_the_laya_shape(self):
+    def test_normalize_fills_the_shared_answer_shape(self):
         out = normalize({"cat": {"choice": "b", "probabilities": {"a": 1, "b": 3}},
                          "nivel": {"level": "2", "probabilities": {"0": 0, "1": 0, "2": 0}},
                          "si": {"probability": .8}}, QUESTIONS)

@@ -31,6 +31,10 @@ async function init() {
                      el("small", {}, m.remote ? (saved[key] ? "API · guardado" : "API · sin corrida") : "local"));
     $("#pick").append(label);
   }
+  if (!Object.values(models).some(m => !m.remote && m.status !== "error")) {
+    $("#run").disabled = true;
+    $("#run").title = "Las corridas de Jev y Luna ya están guardadas; para medir un modelo local inicia sin --remote-only.";
+  }
   showSaved();
 }
 

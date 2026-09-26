@@ -1,7 +1,7 @@
 {
   "key": "laya-mesa",
   "name": "Laya reentrenada",
-  "checkpoint": "/home/zamax/Documents/Repos/personal/Text-Decision-Benchmark/.model-cache/laya-mesa-de-ayuda-v4",
+  "checkpoint": ".model-cache/laya-mesa-de-ayuda-v4",
   "calibrated": true,
   "suite": "tickets-v2",
   "fingerprint": "676cc9872e85",

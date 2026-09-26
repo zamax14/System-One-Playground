@@ -172,7 +172,7 @@ def servers():
 
 
 def distribution(answer, keys):
-    """Laya devuelve la distribución en el orden de los criterios; se empareja por posición."""
+    """El modelo devuelve la distribución en el orden de los criterios; se empareja por posición."""
     values = list(answer["probabilities"].values())
     if len(values) != len(keys) or any(not isinstance(p, (int, float)) or not math.isfinite(p) or not 0 <= p <= 1
                                        for p in values):

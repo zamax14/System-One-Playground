@@ -68,7 +68,9 @@ class SharedModel:
     def __init__(self, max_len=8192, head_max_len=256, device="auto", path=None, name=None):
         self.max_len, self.head_max_len, self.requested, self.path = max_len, head_max_len, device, path
         if path:
-            self.name, self.checkpoint = name or Path(path).name, str(path)
+            local_path = Path(path).resolve()
+            self.name = name or local_path.name
+            self.checkpoint = str(local_path.relative_to(ROOT)) if local_path.is_relative_to(ROOT) else local_path.name
         self.agent, self.status, self.error, self.device = None, "idle", None, None
         self.lock = threading.Lock()
 

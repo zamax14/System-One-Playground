@@ -9,6 +9,6 @@ __pycache__/
 HF_TOKEN
 openrouter
 OPENAI
-# Caché de la herramienta de diseño y videos sin editar (material para publicar)
-.impeccable/hook.cache.json
+# Material de trabajo local para diseño y grabación
+.impeccable/
 assets/videos/

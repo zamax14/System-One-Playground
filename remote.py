@@ -1,6 +1,6 @@
-"""Modelos por HTTP con el mismo contrato que Laya: Jev (System One) y GPT (chat) vía OpenRouter.
+"""Modelos por HTTP con el contrato predict(state, questions): Jev y GPT vía OpenRouter.
 
-`normalize` deja cada respuesta con la forma de Laya, así las demos no distinguen quién decidió.
+`normalize` deja cada respuesta con el formato común de preguntas tipadas.
 """
 import json
 import math
@@ -43,7 +43,7 @@ def _probability(value, what):
 
 
 def normalize(answers, questions):
-    """Respuestas de cualquier modelo → forma de Laya (choice, score, noul, probabilities, confidence)."""
+    """Respuestas de cualquier modelo → formato común (choice, score, noul, probabilities, confidence)."""
     out = {}
     for qid, q in questions.items():
         a = answers.get(qid)

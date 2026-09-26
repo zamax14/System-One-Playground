@@ -111,7 +111,7 @@ class LoopChecks(unittest.TestCase):
         route.turn(fake("agenda", "ver_agenda"))
         self.assertEqual(route.called, ["ver_agenda"])
 
-    def test_it_stops_when_laya_says_the_request_is_covered(self):
+    def test_it_stops_when_the_model_says_the_request_is_covered(self):
         route = Route("Enséñame las ventas")
         route.turn(fake("datos", "consultar_sql"))
         record = route.turn(fake("datos", "graficar", covered=.9))

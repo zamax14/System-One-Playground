@@ -103,7 +103,7 @@ button, input, select { font: inherit; color: inherit; }
 .tabs button { border: 0; padding: 7px 12px; border-radius: 5px; background: none; font: inherit; font-weight: 600; color: var(--muted); cursor: pointer; }
 .tabs button[aria-pressed="true"] { background: var(--violet); color: var(--ink); box-shadow: none; }
 
-/* Velocidad de Laya tras una tanda: milisegundos por decisión. */
+/* Velocidad del modelo tras una tanda: milisegundos por decisión. */
 .speed { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border-radius: 6px;
   background: var(--violet-soft); color: var(--violet-deep); border: 1px solid var(--violet-deep); font-weight: 600; }
 .speed b { font-size: 16px; font-weight: 700; }

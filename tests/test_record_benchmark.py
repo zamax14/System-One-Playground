@@ -6,6 +6,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 import benchmark
+from fastload import ROOT, SharedModel
 from scripts.record_benchmark import record
 from tests.test_server import FakeModel
 
@@ -33,6 +34,10 @@ class LocalFake(FakeModel):
 
 
 class RecordChecks(unittest.TestCase):
+    def test_local_checkpoint_metadata_uses_a_portable_path(self):
+        model = SharedModel(path=ROOT / ".model-cache" / "example")
+        self.assertEqual(model.checkpoint, ".model-cache/example")
+
     def test_local_run_has_no_api_cost(self):
         with TemporaryDirectory() as directory, redirect_stdout(StringIO()):
             result = record("laya", LocalFake(), Path(directory) / "laya.json")

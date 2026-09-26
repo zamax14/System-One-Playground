@@ -8,7 +8,7 @@ import urllib.parse
 import urllib.request
 
 from city import ACTIONS
-from server import App, serve
+from server import App, build_apps, serve
 
 
 class FakeModel:
@@ -32,6 +32,10 @@ class FakeModel:
 
 
 class ServerChecks(unittest.TestCase):
+    def test_remote_only_has_jev_and_luna_without_laya(self):
+        apps = build_apps(remote_only=True)
+        self.assertEqual(list(apps), ["jev", "gpt-luna"])
+
     @classmethod
     def setUpClass(cls):
         cls.model = FakeModel()

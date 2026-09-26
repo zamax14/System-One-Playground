@@ -1,7 +1,7 @@
-"""Ruta de aprendizaje: Laya elige, paso a paso, el siguiente curso del estudiante.
+"""Ruta de aprendizaje: el modelo elige, paso a paso, el siguiente curso del estudiante.
 
 El bucle es una política P(acción | estado). Nadie le pide la ruta entera de una vez: las reglas
-filtran los cursos cuyos prerrequisitos ya cumple, Laya reparte probabilidad entre esos candidatos,
+filtran los cursos cuyos prerrequisitos ya cumple, el modelo reparte probabilidad entre esos candidatos,
 el curso elegido actualiza sus habilidades y el estado nuevo vuelve a entrar.
 """
 import math
@@ -133,7 +133,7 @@ def question_for(candidates):
 
 
 def probabilities(answer, ids):
-    """Laya devuelve la distribución en el orden de los criterios; se empareja por posición."""
+    """El modelo devuelve la distribución en el orden de los criterios; se empareja por posición."""
     values = list(answer["probabilities"].values())
     if len(values) != len(ids) or any(not isinstance(p, (int, float)) or not math.isfinite(p) or not 0 <= p <= 1
                                       for p in values):
@@ -200,7 +200,7 @@ class Roadmap:
             self.done, self.reason = True, "Demasiados pasos"
 
     def step(self, predict):
-        """Una decisión: estado → candidatos → Laya → curso → estado nuevo."""
+        """Una decisión: estado → candidatos → modelo → curso → estado nuevo."""
         if self.done:
             raise LookupError("La ruta ya está terminada; reiníciala para construir otra.")
         candidates = self.candidates()

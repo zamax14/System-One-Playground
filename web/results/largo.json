@@ -1574,7 +1574,7 @@
   },
   "laya-mesa": {
    "name": "Laya reentrenada",
-   "checkpoint": "/home/zamax/Documents/Repos/personal/Text-Decision-Benchmark/.model-cache/laya-mesa-de-ayuda",
+   "checkpoint": ".model-cache/laya-mesa-de-ayuda",
    "calibrated": true,
    "lengths": {
     "original": {

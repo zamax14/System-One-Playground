@@ -18,11 +18,10 @@ def main():
 
     out = ROOT / "assets" / "linkedin"
     out.mkdir(parents=True, exist_ok=True)
-    footer = (f"{runs[0]['suite']} · huella {runs[0]['fingerprint']} · "
-              "20 tickets, 3 preguntas por ticket · 24 sep 2026")
+    footer = "Una prueba de Datzin · 20 tickets · septiembre de 2026"
     charts = {
         "acierto": chart(
-            "Jev vs Luna · acierto", "Referencias de esta demo; 19 categorías y 20 prioridades/bloqueos",
+            "Jev vs Luna · acierto", "¿Cuántas respuestas coincidieron con la referencia?",
             ["Categoría", "Prioridad exacta", "Bloqueo"], runs,
             lambda r: [100 * r["category_correct"] / r["category_total"],
                        100 * r["priority_correct"] / r["priority_total"],
@@ -32,14 +31,14 @@ def main():
                           f'{r["blocking_correct"]}/{r["blocking_total"]}'][i],
             [0, 20, 40, 60, 80, 100], lambda v: f"{v:.0f} %", footer),
         "latencia": chart(
-            "Jev vs Luna · latencia", "ms por ticket, API con red; calentamiento excluido",
-            ["p50", "Media", "p95"], runs,
+            "Jev vs Luna · tiempo de respuesta", "Milisegundos por ticket, incluida la conexión",
+            ["Habitual", "Promedio", "Más lento"], runs,
             lambda r: [r["p50_latency_ms"], r["mean_latency_ms"], r["p95_latency_ms"]],
             lambda r, i: f'{[r["p50_latency_ms"], r["mean_latency_ms"], r["p95_latency_ms"]][i]:.0f} ms',
             [0, 600, 1200, 1800, 2400, 3000], lambda v: f"{v:.0f} ms", footer),
         "costo": chart(
-            "Jev vs Luna · costo de API", "USD cobrados por 21 llamadas: calentamiento + 20 tickets",
-            ["Corrida completa"], runs,
+            "Jev vs Luna · costo de API", "Dólares por 20 tickets y una llamada de preparación",
+            ["Prueba completa"], runs,
             lambda r: [r["cost_usd"]],
             lambda r, i: f'${r["cost_usd"]:.6f}',
             [0, .002, .004, .006, .008], lambda v: f"${v:.3f}", footer),

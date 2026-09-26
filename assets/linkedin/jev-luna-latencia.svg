@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" role="img" aria-label="Jev vs Luna · latencia">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" role="img" aria-label="Jev vs Luna · tiempo de respuesta">
 <rect x="4" y="4" width="875" height="435" rx="12" fill="#0d0d0d"/>
 <rect x="1" y="1" width="875" height="435" rx="12" fill="white" stroke="#0d0d0d" stroke-width="2"/>
-<text x="24" y="36" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="20" font-weight="700" fill="#0d0d0d">Jev vs Luna · latencia</text>
-<text x="24" y="57" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">ms por ticket, API con red; calentamiento excluido</text>
+<text x="24" y="36" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="20" font-weight="700" fill="#0d0d0d">Jev vs Luna · tiempo de respuesta</text>
+<text x="24" y="57" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">Milisegundos por ticket, incluida la conexión</text>
 <rect x="72" y="74" width="15" height="15" rx="3" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
 <text x="95" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Jev 1.13</text>
 <rect x="302" y="74" width="15" height="15" rx="3" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
@@ -19,20 +19,20 @@
 <text x="62" y="175.6" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">2400 ms</text>
 <line x1="72" x2="840" y1="126.0" y2="126.0" stroke="#d4d5d9" stroke-dasharray="3 4"/>
 <text x="62" y="130.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">3000 ms</text>
-<g><title>Jev 1.13 · p50: 305 ms</title><path d="M107.8,354 V334.8 Q107.8,330.8 111.8,330.8 H194.5 Q198.5,330.8 198.5,334.8 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<g><title>Jev 1.13 · Habitual: 305 ms</title><path d="M107.8,354 V334.8 Q107.8,330.8 111.8,330.8 H194.5 Q198.5,330.8 198.5,334.8 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="153.2" y="322.8" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">305 ms</text>
-<g><title>GPT-5.6 Luna · p50: 1946 ms</title><path d="M201.5,354 V210.1 Q201.5,206.1 205.5,206.1 H288.2 Q292.2,206.1 292.2,210.1 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<g><title>GPT-5.6 Luna · Habitual: 1946 ms</title><path d="M201.5,354 V210.1 Q201.5,206.1 205.5,206.1 H288.2 Q292.2,206.1 292.2,210.1 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="246.8" y="198.1" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">1946 ms</text>
-<text x="200.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">p50</text>
-<g><title>Jev 1.13 · Media: 307 ms</title><path d="M363.8,354 V334.7 Q363.8,330.7 367.8,330.7 H450.5 Q454.5,330.7 454.5,334.7 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="200.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Habitual</text>
+<g><title>Jev 1.13 · Promedio: 307 ms</title><path d="M363.8,354 V334.7 Q363.8,330.7 367.8,330.7 H450.5 Q454.5,330.7 454.5,334.7 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="409.2" y="322.7" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">307 ms</text>
-<g><title>GPT-5.6 Luna · Media: 1895 ms</title><path d="M457.5,354 V214.0 Q457.5,210.0 461.5,210.0 H544.2 Q548.2,210.0 548.2,214.0 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<g><title>GPT-5.6 Luna · Promedio: 1895 ms</title><path d="M457.5,354 V214.0 Q457.5,210.0 461.5,210.0 H544.2 Q548.2,210.0 548.2,214.0 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="502.8" y="202.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">1895 ms</text>
-<text x="456.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Media</text>
-<g><title>Jev 1.13 · p95: 418 ms</title><path d="M619.8,354 V326.3 Q619.8,322.3 623.8,322.3 H706.5 Q710.5,322.3 710.5,326.3 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="456.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Promedio</text>
+<g><title>Jev 1.13 · Más lento: 418 ms</title><path d="M619.8,354 V326.3 Q619.8,322.3 623.8,322.3 H706.5 Q710.5,322.3 710.5,326.3 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="665.2" y="314.3" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">418 ms</text>
-<g><title>GPT-5.6 Luna · p95: 2655 ms</title><path d="M713.5,354 V156.2 Q713.5,152.2 717.5,152.2 H800.2 Q804.2,152.2 804.2,156.2 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<g><title>GPT-5.6 Luna · Más lento: 2655 ms</title><path d="M713.5,354 V156.2 Q713.5,152.2 717.5,152.2 H800.2 Q804.2,152.2 804.2,156.2 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="758.8" y="144.2" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">2655 ms</text>
-<text x="712.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">p95</text>
-<text x="24" y="416" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="10" font-weight="400" fill="#696969">tickets-v2 · huella 676cc9872e85 · 20 tickets, 3 preguntas por ticket · 24 sep 2026</text>
+<text x="712.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Más lento</text>
+<text x="24" y="416" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="10" font-weight="400" fill="#696969">Una prueba de Datzin · 20 tickets · septiembre de 2026</text>
 </svg>

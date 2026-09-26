@@ -24,8 +24,6 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import fastload  # noqa: E402  Antes que torch.
 
-from pydantic import BaseModel  # noqa: E402
-
 import benchmark  # noqa: E402
 from remote import OPENROUTER, ChatModel, JevModel, post  # noqa: E402
 from tickets import TICKETS, ticket_state  # noqa: E402
@@ -49,8 +47,8 @@ NOISE_KINDS = ["actas de reuniones de áreas de negocio", "avisos y circulares d
                "resúmenes de ventas, indicadores y metas del trimestre", "políticas de viáticos, vacaciones y horarios"]
 
 
-class Noise(BaseModel):
-    bloques: list[str]
+NOISE_SCHEMA = {"type": "object", "properties": {"bloques": {"type": "array", "items": {"type": "string"}}},
+                "required": ["bloques"], "additionalProperties": False}
 
 
 def generate_noise():
@@ -68,8 +66,10 @@ def generate_noise():
                   "usuario, impresoras, pantallas, archivos, seguridad informática ni soporte técnico.")
         body = post(url, {"model": model, "messages": [{"role": "user", "content": prompt}],
                           "response_format": {"type": "json_schema", "json_schema": {
-                              "name": "ruido", "strict": True, "schema": Noise.model_json_schema()}}, **extra}, key)
-        found = Noise.model_validate_json(body["choices"][0]["message"]["content"]).bloques
+                              "name": "ruido", "strict": True, "schema": NOISE_SCHEMA}}, **extra}, key)
+        found = json.loads(body["choices"][0]["message"]["content"])["bloques"]
+        if not isinstance(found, list) or any(not isinstance(b, str) for b in found):
+            raise ValueError("La respuesta de ruido debe contener una lista de textos")
         blocks += [b.strip() for b in found if not any(w in b.lower() for w in TECH_WORDS)]
         print(f"ruido: {kind}: {len(found)} bloques, {len(blocks)} válidos en total", flush=True)
     NOISE.parent.mkdir(parents=True, exist_ok=True)
