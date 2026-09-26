@@ -12,3 +12,5 @@ OPENAI
 # Material de trabajo local para diseño y grabación
 .impeccable/
 assets/videos/
+assets/linkedin/
+scripts/plot_jev_luna.py
