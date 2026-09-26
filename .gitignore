@@ -1,16 +1,7 @@
 .venv/
-.venv-kev/
 .model-cache/
-.kev.log
-synth.log
-finetune.log
 __pycache__/
 *.pyc
 HF_TOKEN
 openrouter
 OPENAI
-# Material de trabajo local para diseño y grabación
-.impeccable/
-assets/videos/
-assets/linkedin/
-scripts/plot_jev_luna.py
