@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" role="img" aria-label="Laya base vs Jev vs Luna · tiempo">
+<rect x="4" y="4" width="875" height="435" rx="12" fill="#0d0d0d"/>
+<rect x="1" y="1" width="875" height="435" rx="12" fill="white" stroke="#0d0d0d" stroke-width="2"/>
+<text x="24" y="36" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="20" font-weight="700" fill="#0d0d0d">Laya base vs Jev vs Luna · tiempo</text>
+<text x="24" y="57" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">Milisegundos por ticket · Laya en GPU; APIs con red</text>
+<rect x="72" y="74" width="15" height="15" rx="3" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="95" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Laya Multilingual</text>
+<rect x="302" y="74" width="15" height="15" rx="3" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="325" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Jev 1.13</text>
+<rect x="532" y="74" width="15" height="15" rx="3" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="555" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">GPT-5.6 Luna</text>
+<line x1="72" x2="840" y1="354.0" y2="354.0" stroke="#d4d5d9"/>
+<text x="62" y="358.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">0 ms</text>
+<line x1="72" x2="840" y1="308.4" y2="308.4" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="312.4" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">600 ms</text>
+<line x1="72" x2="840" y1="262.8" y2="262.8" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="266.8" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">1200 ms</text>
+<line x1="72" x2="840" y1="217.2" y2="217.2" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="221.20000000000002" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">1800 ms</text>
+<line x1="72" x2="840" y1="171.6" y2="171.6" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="175.6" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">2400 ms</text>
+<line x1="72" x2="840" y1="126.0" y2="126.0" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="130.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">3000 ms</text>
+<g><title>Laya Multilingual · Habitual: 31 ms</title><path d="M107.8,354 V354.0 Q107.8,351.6 110.2,351.6 H164.9 Q167.3,351.6 167.3,354.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="137.6" y="343.6" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">31 ms</text>
+<g><title>Jev 1.13 · Habitual: 305 ms</title><path d="M170.3,354 V334.8 Q170.3,330.8 174.3,330.8 H225.7 Q229.7,330.8 229.7,334.8 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="200.0" y="322.8" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">305 ms</text>
+<g><title>GPT-5.6 Luna · Habitual: 1946 ms</title><path d="M232.7,354 V210.1 Q232.7,206.1 236.7,206.1 H288.2 Q292.2,206.1 292.2,210.1 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="262.4" y="198.1" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">1946 ms</text>
+<text x="200.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Habitual</text>
+<g><title>Laya Multilingual · Promedio: 30 ms</title><path d="M363.8,354 V354.0 Q363.8,351.7 366.1,351.7 H421.0 Q423.3,351.7 423.3,354.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="393.6" y="343.7" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">30 ms</text>
+<g><title>Jev 1.13 · Promedio: 307 ms</title><path d="M426.3,354 V334.7 Q426.3,330.7 430.3,330.7 H481.7 Q485.7,330.7 485.7,334.7 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="456.0" y="322.7" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">307 ms</text>
+<g><title>GPT-5.6 Luna · Promedio: 1895 ms</title><path d="M488.7,354 V214.0 Q488.7,210.0 492.7,210.0 H544.2 Q548.2,210.0 548.2,214.0 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="518.4" y="202.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">1895 ms</text>
+<text x="456.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Promedio</text>
+<g><title>Laya Multilingual · Más lento: 33 ms</title><path d="M619.8,354 V354.0 Q619.8,351.5 622.3,351.5 H676.8 Q679.3,351.5 679.3,354.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="649.6" y="343.5" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">33 ms</text>
+<g><title>Jev 1.13 · Más lento: 418 ms</title><path d="M682.3,354 V326.3 Q682.3,322.3 686.3,322.3 H737.7 Q741.7,322.3 741.7,326.3 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="712.0" y="314.3" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">418 ms</text>
+<g><title>GPT-5.6 Luna · Más lento: 2655 ms</title><path d="M744.7,354 V156.2 Q744.7,152.2 748.7,152.2 H800.2 Q804.2,152.2 804.2,156.2 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="774.4" y="144.2" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">2655 ms</text>
+<text x="712.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Más lento</text>
+<text x="24" y="416" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="10" font-weight="400" fill="#696969">Una prueba de Datzin · 20 tickets ficticios · septiembre de 2026</text>
+</svg>

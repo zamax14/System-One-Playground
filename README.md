@@ -226,6 +226,20 @@ Las gráficas usan las mismas corridas y el estilo del repositorio de referencia
 
 <img src="assets/benchmark/cost.png" width="760" alt="Costo de API en dólares: las dos Laya cero, Jev y Luna de pago">
 
+#### Comparativas por tema
+
+Las gráficas de dos y tres modelos usan la misma suite y huella. La comparación de tres modelos
+incluye **Laya Multilingual base en GPU**, Jev y Luna; no incluye la Laya reentrenada.
+
+| Tema | Jev y Luna | Laya base, Jev y Luna |
+|---|---|---|
+| Acierto | [PNG](assets/comparativas/acierto/jev-luna.png) · [SVG](assets/comparativas/acierto/jev-luna.svg) | [PNG](assets/comparativas/acierto/laya-jev-luna.png) · [SVG](assets/comparativas/acierto/laya-jev-luna.svg) |
+| Latencia | [PNG](assets/comparativas/latencia/jev-luna.png) · [SVG](assets/comparativas/latencia/jev-luna.svg) | [PNG](assets/comparativas/latencia/laya-jev-luna.png) · [SVG](assets/comparativas/latencia/laya-jev-luna.svg) |
+| Costo de API | [PNG](assets/comparativas/costo/jev-luna.png) · [SVG](assets/comparativas/costo/jev-luna.svg) | [PNG](assets/comparativas/costo/laya-jev-luna.png) · [SVG](assets/comparativas/costo/laya-jev-luna.svg) |
+
+La latencia de Laya es local en GPU; la de Jev y Luna incluye red. Los $0 de Laya son solo costo de
+API: no incluyen hardware ni electricidad.
+
 Para regenerar los SVG y PNG desde los JSON guardados:
 `.venv/bin/python scripts/plot_benchmark.py --png` (requiere Chrome para los PNG). La Laya
 reentrenada entra en las gráficas si existe su corrida (`--ajustada`, por defecto

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" role="img" aria-label="Jev vs Luna · acierto">
+<rect x="4" y="4" width="875" height="435" rx="12" fill="#0d0d0d"/>
+<rect x="1" y="1" width="875" height="435" rx="12" fill="white" stroke="#0d0d0d" stroke-width="2"/>
+<text x="24" y="36" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="20" font-weight="700" fill="#0d0d0d">Jev vs Luna · acierto</text>
+<text x="24" y="57" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">¿Cuántas respuestas coincidieron con la referencia?</text>
+<rect x="72" y="74" width="15" height="15" rx="3" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="95" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Jev 1.13</text>
+<rect x="302" y="74" width="15" height="15" rx="3" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="325" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">GPT-5.6 Luna</text>
+<line x1="72" x2="840" y1="354.0" y2="354.0" stroke="#d4d5d9"/>
+<text x="62" y="358.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">0 %</text>
+<line x1="72" x2="840" y1="308.4" y2="308.4" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="312.4" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">20 %</text>
+<line x1="72" x2="840" y1="262.8" y2="262.8" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="266.8" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">40 %</text>
+<line x1="72" x2="840" y1="217.2" y2="217.2" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="221.20000000000002" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">60 %</text>
+<line x1="72" x2="840" y1="171.6" y2="171.6" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="175.6" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">80 %</text>
+<line x1="72" x2="840" y1="126.0" y2="126.0" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="130.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">100 %</text>
+<g><title>Jev 1.13 · Categoría: 19/19</title><path d="M107.8,354 V130.0 Q107.8,126.0 111.8,126.0 H194.5 Q198.5,126.0 198.5,130.0 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="153.2" y="118.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">19/19</text>
+<g><title>GPT-5.6 Luna · Categoría: 19/19</title><path d="M201.5,354 V130.0 Q201.5,126.0 205.5,126.0 H288.2 Q292.2,126.0 292.2,130.0 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="246.8" y="118.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">19/19</text>
+<text x="200.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Categoría</text>
+<g><title>Jev 1.13 · Prioridad exacta: 13/20</title><path d="M363.8,354 V209.8 Q363.8,205.8 367.8,205.8 H450.5 Q454.5,205.8 454.5,209.8 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="409.2" y="197.8" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">13/20</text>
+<g><title>GPT-5.6 Luna · Prioridad exacta: 15/20</title><path d="M457.5,354 V187.0 Q457.5,183.0 461.5,183.0 H544.2 Q548.2,183.0 548.2,187.0 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="502.8" y="175.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">15/20</text>
+<text x="456.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Prioridad exacta</text>
+<g><title>Jev 1.13 · Bloqueo: 19/20</title><path d="M619.8,354 V141.4 Q619.8,137.4 623.8,137.4 H706.5 Q710.5,137.4 710.5,141.4 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="665.2" y="129.4" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">19/20</text>
+<g><title>GPT-5.6 Luna · Bloqueo: 19/20</title><path d="M713.5,354 V141.4 Q713.5,137.4 717.5,137.4 H800.2 Q804.2,137.4 804.2,141.4 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="758.8" y="129.4" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">19/20</text>
+<text x="712.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Bloqueo</text>
+<text x="24" y="416" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="10" font-weight="400" fill="#696969">Una prueba de Datzin · 20 tickets · septiembre de 2026</text>
+</svg>
