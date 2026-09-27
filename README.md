@@ -248,14 +248,15 @@ La tercera serie está en [`assets/comparativas/laya-ft-jev-luna/`](assets/compa
 [costo de API](assets/comparativas/laya-ft-jev-luna/costo.png) (también hay SVG).
 Mide una tarea distinta de los tickets anteriores: decidir si responder, pedir datos o usar herramientas,
 y elegir entre web, calendario, correo, archivos y base de datos. Los 120 casos de prueba escritos a mano
-son de [Laya-Finetune](https://github.com/zamax14/Laya-Finetune). Los cinco modelos respondieron las
-mismas preguntas y casos (`fingerprint: 72a19374dfd9`).
+corresponden a [Laya-Finetune `f14d0d5`](https://github.com/zamax14/Laya-Finetune/tree/f14d0d5).
+Los cinco modelos respondieron las mismas preguntas y casos (`fingerprint: 72a19374dfd9`).
+Jev y Luna conservan las respuestas de la primera corrida; solo se volvieron a medir los dos checkpoints FT.
 
 | Modelo | Decisión completa | Acción | Latencia p50 | Costo de API |
 |---|---:|---:|---:|---:|
 | Laya Multilingual base · 1k | 12/120 | 30/120 | 26 ms | $0 |
-| Laya FT · 1k | 67/120 | 93/120 | 26 ms | $0 |
-| Laya FT · 8k | 78/120 | 99/120 | 27 ms | $0 |
+| Laya FT · 1k | 79/120 | 101/120 | 27 ms | $0 |
+| Laya FT · 8k | 86/120 | 104/120 | 27 ms | $0 |
 | Jev 1.13 | 64/120 | 114/120 | 502 ms | $0.003090 |
 | GPT-5.6 Luna | 103/120 | 119/120 | 1541 ms | $0.027999 |
 
@@ -263,10 +264,13 @@ La decisión completa exige acertar la acción y las cinco herramientas. **1k y 
 configurados de los checkpoints**, no longitudes de entrada medidas aquí: esta prueba usa solicitudes
 cortas. Falta el checkpoint FT 32k. La latencia de Laya se midió en una RTX 4050 local; la de las APIs
 incluye red. $0 de API no equivale a costo total cero.
+La revisión actual de la tarea cambió 18 respuestas esperadas y el criterio de `ask_user`. Se conserva
+la prueba original para poder comparar con las respuestas de API ya guardadas, sin gastar nuevos tokens.
 
 Para repetir esta serie, instala el entorno de `Laya-Finetune`, conserva sus dos checkpoints en
 `.model-cache/` y ejecuta cada modelo con `scripts/benchmark_tool_routing.py` y
-`--task /ruta/a/Laya-Finetune/tasks/tool_routing.yaml`. `scripts/plot_tool_routing.py --png` regenera
+`--task /ruta/a/Laya-Finetune/tasks/tool_routing.yaml` **de la revisión `f14d0d5`**.
+`scripts/plot_tool_routing.py --png` regenera
 las imágenes desde los resultados locales o desde el
 [resumen publicado](assets/comparativas/laya-ft-jev-luna/resultados.json).
 

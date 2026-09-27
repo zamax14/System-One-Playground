@@ -32,7 +32,8 @@ def runs():
                                                          "fingerprint", "test_sha256", "created_at", "status",
                                                          "all_correct", "total", "p50_latency_ms", "p95_latency_ms",
                                                          "cost_usd")}
-                          | {"key": key, "name": name, "action_correct": run["questions"]["action"]["correct"],
+                          | {"key": key, "name": name, "weights_sha256": run.get("weights_sha256"),
+                             "action_correct": run["questions"]["action"]["correct"],
                              "tool_set_correct": tool_set})
     else:
         loaded = json.loads((OUTPUT / "resultados.json").read_text(encoding="utf-8"))
@@ -60,7 +61,7 @@ def main():
                 100 * run["tool_set_correct"] / 120]
 
     charts = {
-        "acierto": chart("Decisiones sobre herramientas", "Misma prueba de 120 solicitudes para los cinco modelos",
+        "acierto": chart("Decisiones sobre herramientas", "Prueba original de 120 solicitudes · Jev y Luna guardados",
                          ["Decisión completa", "Acción", "Herramientas"], measured,
                          accuracy, lambda r, i: f"{accuracy(r)[i]:.0f} %",
                          [0, 20, 40, 60, 80, 100], lambda v: f"{v:.0f} %", footer),

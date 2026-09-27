@@ -27,8 +27,8 @@
 <text x="62" y="130.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">3000 ms</text>
 <g><title>Laya base · 1k · p50: 26 ms</title><path d="M149.0,354 V354.0 Q149.0,352.0 151.0,352.0 H190.6 Q192.6,352.0 192.6,354.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="170.8" y="344.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">26 ms</text>
-<g><title>Laya FT · 1k · p50: 26 ms</title><path d="M195.6,354 V354.0 Q195.6,352.0 197.6,352.0 H237.2 Q239.2,352.0 239.2,354.0 V354 Z" fill="#2fbf94" stroke="#0d0d0d" stroke-width="2"/></g>
-<text x="217.4" y="344.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">26 ms</text>
+<g><title>Laya FT · 1k · p50: 27 ms</title><path d="M195.6,354 V354.0 Q195.6,352.0 197.6,352.0 H237.2 Q239.2,352.0 239.2,354.0 V354 Z" fill="#2fbf94" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="217.4" y="344.0" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">27 ms</text>
 <g><title>Laya FT · 8k · p50: 27 ms</title><path d="M242.2,354 V354.0 Q242.2,351.9 244.3,351.9 H283.7 Q285.8,351.9 285.8,354.0 V354 Z" fill="#7757e4" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="264.0" y="343.9" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">27 ms</text>
 <g><title>Jev · p50: 502 ms</title><path d="M288.8,354 V319.9 Q288.8,315.9 292.8,315.9 H328.4 Q332.4,315.9 332.4,319.9 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
@@ -38,10 +38,10 @@
 <text x="264.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">p50</text>
 <g><title>Laya base · 1k · p95: 33 ms</title><path d="M533.0,354 V354.0 Q533.0,351.5 535.5,351.5 H574.1 Q576.6,351.5 576.6,354.0 V354 Z" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="554.8" y="343.5" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">33 ms</text>
-<g><title>Laya FT · 1k · p95: 33 ms</title><path d="M579.6,354 V354.0 Q579.6,351.5 582.1,351.5 H620.7 Q623.2,351.5 623.2,354.0 V354 Z" fill="#2fbf94" stroke="#0d0d0d" stroke-width="2"/></g>
-<text x="601.4" y="343.5" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">33 ms</text>
-<g><title>Laya FT · 8k · p95: 72 ms</title><path d="M626.2,354 V352.6 Q626.2,348.6 630.2,348.6 H665.8 Q669.8,348.6 669.8,352.6 V354 Z" fill="#7757e4" stroke="#0d0d0d" stroke-width="2"/></g>
-<text x="648.0" y="340.6" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">72 ms</text>
+<g><title>Laya FT · 1k · p95: 62 ms</title><path d="M579.6,354 V353.2 Q579.6,349.2 583.6,349.2 H619.2 Q623.2,349.2 623.2,353.2 V354 Z" fill="#2fbf94" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="601.4" y="341.2" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">62 ms</text>
+<g><title>Laya FT · 8k · p95: 31 ms</title><path d="M626.2,354 V354.0 Q626.2,351.7 628.5,351.7 H667.5 Q669.8,351.7 669.8,354.0 V354 Z" fill="#7757e4" stroke="#0d0d0d" stroke-width="2"/></g>
+<text x="648.0" y="343.7" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">31 ms</text>
 <g><title>Jev · p95: 583 ms</title><path d="M672.8,354 V313.7 Q672.8,309.7 676.8,309.7 H712.4 Q716.4,309.7 716.4,313.7 V354 Z" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/></g>
 <text x="694.6" y="301.7" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">583 ms</text>
 <g><title>Luna · p95: 1944 ms</title><path d="M719.4,354 V210.2 Q719.4,206.2 723.4,206.2 H759.0 Q763.0,206.2 763.0,210.2 V354 Z" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/></g>

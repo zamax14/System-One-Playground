@@ -45,7 +45,11 @@ def main():
         raise ValueError(f"No hay casos de prueba en {task.test_path}")
     fingerprint = task.fingerprint(cases)
     test_sha256 = hashlib.sha256(task.test_path.read_bytes()).hexdigest()
+    weights_sha256 = None
     if args.model in CHECKPOINTS:
+        if args.model.startswith("laya-ft-"):
+            with (CHECKPOINTS[args.model] / "model.safetensors").open("rb") as source:
+                weights_sha256 = hashlib.file_digest(source, "sha256").hexdigest()
         model = load(CHECKPOINTS[args.model], device=args.device, ctx=1024 if args.model == "laya-base" else None)
         checkpoint = (str(CHECKPOINTS[args.model].relative_to(ROOT))
                       if isinstance(CHECKPOINTS[args.model], Path) else CHECKPOINTS[args.model])
@@ -59,12 +63,14 @@ def main():
         data = json.loads(path.read_text(encoding="utf-8"))
         if (data["fingerprint"], data["test_sha256"], data["checkpoint"]) != (fingerprint, test_sha256, checkpoint):
             raise ValueError(f"{path} contiene otra evaluación; elige otra ruta")
+        if weights_sha256 and data.get("weights_sha256") != weights_sha256:
+            raise ValueError(f"{path} contiene otros pesos; conserva esa corrida con otro nombre antes de repetirla")
         if data["status"] == "complete":
             print(f"Corrida completa: {path}")
             return
     else:
         data = {"model": args.model, "checkpoint": checkpoint, "context_size": context_size,
-                "device": device, "task": task.name, "fingerprint": fingerprint,
+                "weights_sha256": weights_sha256, "device": device, "task": task.name, "fingerprint": fingerprint,
                 "test_sha256": test_sha256, "created_at": datetime.now(timezone.utc).isoformat(),
                 "status": "running", "cost_usd": 0 if device == "api" else None, "rows": []}
         save(path, data)
