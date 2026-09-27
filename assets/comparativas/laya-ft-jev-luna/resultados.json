@@ -15,6 +15,7 @@
     "cost_usd": null,
     "key": "laya-base",
     "name": "Laya base · 1k",
+    "weights_sha256": null,
     "action_correct": 30,
     "tool_set_correct": 30
   },
@@ -25,17 +26,18 @@
     "task": "tool_routing",
     "fingerprint": "72a19374dfd9",
     "test_sha256": "9a008296d6e83abf05d040faee61eca19372d555c81af42330c37d46bd68e5d3",
-    "created_at": "2026-09-26T19:01:06.703481+00:00",
+    "created_at": "2026-09-27T19:11:34.903636+00:00",
     "status": "complete",
-    "all_correct": 67,
+    "all_correct": 79,
     "total": 120,
-    "p50_latency_ms": 26.2,
-    "p95_latency_ms": 32.8,
+    "p50_latency_ms": 26.8,
+    "p95_latency_ms": 62.5,
     "cost_usd": null,
     "key": "laya-ft-1k",
     "name": "Laya FT · 1k",
-    "action_correct": 93,
-    "tool_set_correct": 75
+    "weights_sha256": "1fe20f68a49a3b5bcec7681224142fd61fa93ac468c3dd53d9959e52cf51a785",
+    "action_correct": 101,
+    "tool_set_correct": 85
   },
   {
     "checkpoint": ".model-cache/laya-tool-routing-8k",
@@ -44,17 +46,18 @@
     "task": "tool_routing",
     "fingerprint": "72a19374dfd9",
     "test_sha256": "9a008296d6e83abf05d040faee61eca19372d555c81af42330c37d46bd68e5d3",
-    "created_at": "2026-09-26T19:06:08.334598+00:00",
+    "created_at": "2026-09-27T19:11:55.739461+00:00",
     "status": "complete",
-    "all_correct": 78,
+    "all_correct": 86,
     "total": 120,
-    "p50_latency_ms": 27.2,
-    "p95_latency_ms": 71.7,
+    "p50_latency_ms": 27.1,
+    "p95_latency_ms": 30.9,
     "cost_usd": null,
     "key": "laya-ft-8k",
     "name": "Laya FT · 8k",
-    "action_correct": 99,
-    "tool_set_correct": 80
+    "weights_sha256": "9a6a89913cfada12632de2ba76648d5d398ecdf887aa10e9ef6e305723dfa5ab",
+    "action_correct": 104,
+    "tool_set_correct": 93
   },
   {
     "checkpoint": "typesafe/jev-1.13",
@@ -72,6 +75,7 @@
     "cost_usd": 0.00308956,
     "key": "jev",
     "name": "Jev",
+    "weights_sha256": null,
     "action_correct": 114,
     "tool_set_correct": 67
   },
@@ -91,6 +95,7 @@
     "cost_usd": 0.0279986,
     "key": "luna",
     "name": "Luna",
+    "weights_sha256": null,
     "action_correct": 119,
     "tool_set_correct": 103
   }
