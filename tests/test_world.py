@@ -21,19 +21,21 @@ class WorldChecks(unittest.TestCase):
                 self.assertIn(ficha[key], allowed, country['id'])
         self.assertNotIn('ATA', {c['id'] for c in countries})
 
-    def test_state_names_only_salient_traits(self):
+    def test_state_uses_valid_descriptions(self):
         by_id = {c['id']: c for c in load_countries()}
-        self.assertTrue(country_state(by_id['MEX']).startswith('México: tacos'))
-        self.assertIn('muy picante', country_state(by_id['MEX']))
-        # Un rasgo ausente no se menciona: si se nombra, Laya lo toma por coincidencia.
-        self.assertNotIn('pica', country_state(by_id['NOR']))
-        self.assertNotIn('vegetariano', country_state(by_id['ARG']))
         self.assertEqual(by_id['TWN']['name'], 'Taiwán')  # Los nombres corregidos en la ficha mandan.
         for country in by_id.values():
             state = country_state(country)
-            self.assertLess(len(state), 700, country['id'])
+            self.assertTrue(state.startswith(country['name'] + ': '), country['id'])
+            self.assertTrue(200 <= len(country['descripcion'].split()) <= 300, country['id'])
             for label in ('Picante:', 'Pescado y marisco:', 'Comer vegetariano:', 'Carne:'):
                 self.assertNotIn(label, state, country['id'])  # Las etiquetas hacían eco de la consulta.
+
+    def test_country_state_uses_enriched_description(self):
+        country = load_countries()[0]
+        country['descripcion'] = 'Texto gastronómico de prueba. Otra oración.'
+        self.assertTrue(country_state(country).endswith('Texto gastronómico de prueba.'))
+        self.assertNotIn('Otra oración.', country_state(country))
 
     def test_prior_matches_the_fichas_and_orders_scores(self):
         countries = load_countries()
@@ -43,6 +45,12 @@ class WorldChecks(unittest.TestCase):
         self.assertGreater(relative(.9, prior=-2), relative(.9, prior=2))
         self.assertLess(relative(.5, 0), relative(.9, 0))
         self.assertTrue(0 < relative(1.0, 5) < 1 and 0 < relative(0.0, -5) < 1)
+
+    def test_prior_rejects_changed_country_text(self):
+        countries = load_countries()
+        countries[0]['descripcion'] = 'Una descripción distinta.'
+        with self.assertRaises(ValueError):
+            load_prior(countries)
 
     def test_scores_are_independent_and_validated(self):
         countries = load_countries()[:2]
