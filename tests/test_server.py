@@ -8,6 +8,7 @@ import urllib.parse
 import urllib.request
 
 from system_one_playground.demos.city import ACTIONS
+from system_one_playground.demos.atlas import country_state, load_countries
 from system_one_playground.server import App, build_apps, serve
 
 
@@ -84,7 +85,7 @@ class ServerChecks(unittest.TestCase):
     def test_atlas_streams_every_country(self):
         countries = json.loads(self.get("/api/atlas/countries")[2])
         mexico = next(c for c in countries if c["id"] == "MEX")
-        self.assertIn("muy picante", mexico["texto"])
+        self.assertEqual(mexico["texto"], country_state(next(c for c in load_countries() if c["id"] == "MEX")))
         events = self.events("Comida picante")
         kinds = [kind for kind, _ in events]
         self.assertEqual(set(kinds[:-1]), {"batch"})

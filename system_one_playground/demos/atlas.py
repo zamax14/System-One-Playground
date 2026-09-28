@@ -1,9 +1,11 @@
 """Atlas de gastronomía: el modelo puntúa la cocina de cada país por lotes cancelables."""
 from concurrent.futures import ThreadPoolExecutor
+import hashlib
 import json
 import math
 from pathlib import Path
 import queue
+import re
 import sys
 import threading
 import time
@@ -13,13 +15,11 @@ ASSETS = Path(__file__).resolve().parents[2] / "assets"
 BATCH_SIZE = 8
 MAX_QUERY = 500
 PRIOR_PATH = ASSETS / "gastronomia_prior.json"
+DESCRIPTIONS_PATH = ASSETS / "gastronomia_enriquecida.json"
 QUESTION = "¿Encaja la cocina de este país con lo que se busca: {query}?"
 FICHA = ("platos", "ingredientes", "picante", "mar", "carne", "vegetariano", "dulces", "bebidas")
 SCALES = {"picante": ("alto", "medio", "bajo"), "mar": ("muy presente", "presente", "poco presente"),
           "vegetariano": ("fácil", "posible", "difícil")}
-# Laya dice «sí» a casi todo lo que menciona el tema de la consulta (medido: con «Picante: bajo» en
-# todas las fichas, 121 de 176 países salían a 1,00 para «comida picante»). Por eso el texto solo
-# nombra un rasgo cuando el país lo tiene de verdad.
 SALIENT = {("picante", "alto"): "La comida suele ser muy picante.", ("picante", "medio"): "Algunos platos pican.",
            ("mar", "muy presente"): "El pescado y el marisco son protagonistas.",
            ("vegetariano", "fácil"): "Es fácil comer vegetariano."}
@@ -40,6 +40,9 @@ def load_fichas():
 
 def load_countries():
     fichas = load_fichas()
+    descriptions = json.loads(DESCRIPTIONS_PATH.read_text(encoding="utf-8"))
+    if set(descriptions) != set(fichas):
+        raise ValueError("Las descripciones gastronómicas no cubren los mismos países que las fichas")
     countries = []
     for feature in json.loads((ASSETS / "world.geojson").read_text())["features"]:
         props, geometry = feature["properties"], feature["geometry"]
@@ -49,9 +52,13 @@ def load_countries():
         if code not in fichas:
             raise ValueError(f"Falta la ficha de {code} en assets/gastronomia.jsonl")
         ficha = dict(fichas[code])
+        description = descriptions[code]
+        if (not isinstance(description, str) or not 200 <= len(description.split()) <= 300
+                or not re.search(r"[.!?](?=\s|$)", description)):
+            raise ValueError(f"Descripción incompleta de {code} en {DESCRIPTIONS_PATH.name}")
         polygons = geometry["coordinates"] if geometry["type"] == "MultiPolygon" else [geometry["coordinates"]]
         countries.append({"id": code, "name": ficha.pop("nombre", None) or props.get("NAME_ES") or props["ADMIN"],
-                          "ficha": ficha, "polygons": polygons})
+                          "ficha": ficha, "descripcion": description, "polygons": polygons})
     return sorted(countries, key=lambda c: c["name"])
 
 
@@ -61,7 +68,15 @@ def country_state(country):
              x["carne"][0].upper() + x["carne"][1:] + "."]
     lines += [SALIENT[key, x[key]] for key in SCALES if (key, x[key]) in SALIENT]
     lines += [f"De postre, {x['dulces']}.", f"Se bebe {x['bebidas']}."]
+    # El texto largo desordena el ranking de Laya; una oración añade contexto sin enterrar la ficha.
+    description = country["descripcion"]
+    lines.append(description[:re.search(r"[.!?](?=\s|$)", description).end()])
     return "\n".join(lines)
+
+
+def state_fingerprint(countries):
+    states = {country["id"]: country_state(country) for country in countries}
+    return hashlib.sha256(json.dumps(states, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
 
 def logit(p):
@@ -77,8 +92,9 @@ def relative(p, prior):
 def load_prior(countries):
     data = json.loads(PRIOR_PATH.read_text(encoding="utf-8")) if PRIOR_PATH.exists() else {}
     if (data.get("model") != CHECKPOINT or data.get("question") != QUESTION or data.get("queries") != list(CALIBRATION)
+            or data.get("state_sha256") != state_fingerprint(countries)
             or set(data.get("prior", {})) != {c["id"] for c in countries}):
-        raise ValueError("La calibración falta o no coincide con las fichas; ejecuta: python3 -m system_one_playground.demos.atlas calibrar")
+        raise ValueError("La calibración falta o no coincide con el texto del Atlas; ejecuta: python3 -m system_one_playground.demos.atlas calibrar")
     return data["prior"]
 
 
@@ -90,6 +106,7 @@ def calibrate(countries, model):
             p = extract_scores(model.predict(country_state(country), questions_for([country], query)), [country])
             prior[country["id"]] = prior.get(country["id"], 0) + logit(p[country["id"]]) / len(CALIBRATION)
     PRIOR_PATH.write_text(json.dumps({"model": CHECKPOINT, "question": QUESTION, "queries": list(CALIBRATION),
+                                      "state_sha256": state_fingerprint(countries),
                                       "prior": {k: round(v, 3) for k, v in sorted(prior.items())}},
                                      ensure_ascii=False, indent=1), encoding="utf-8")
 
