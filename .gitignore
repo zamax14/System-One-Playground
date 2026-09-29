@@ -5,3 +5,5 @@ __pycache__/
 HF_TOKEN
 openrouter
 OPENAI
+# Filas por caso de benchmark_finetunes.py: contienen el texto de las pruebas reservadas de Laya-Tasks.
+web/results/finetunes/

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" role="img" aria-label="Accuracy per question">
+<rect x="4" y="4" width="875" height="435" rx="12" fill="#0d0d0d"/>
+<rect x="1" y="1" width="875" height="435" rx="12" fill="white" stroke="#0d0d0d" stroke-width="2"/>
+<text x="24" y="36" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="20" font-weight="700" fill="#0d0d0d">Accuracy per question</text>
+<text x="24" y="57" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">tool_routing · 120 casos de prueba reservados · GPU local</text>
+<rect x="72" y="74" width="15" height="15" rx="3" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="95" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">Laya base</text>
+<rect x="262" y="74" width="15" height="15" rx="3" fill="#ffc53d" stroke="#0d0d0d" stroke-width="2"/>
+<text x="285" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">FT · 1k</text>
+<rect x="452" y="74" width="15" height="15" rx="3" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="475" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">FT · 8k</text>
+<rect x="642" y="74" width="15" height="15" rx="3" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="665" y="87" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="700" fill="#0d0d0d">FT · 32k</text>
+<line x1="72" x2="840" y1="354.0" y2="354.0" stroke="#d4d5d9"/>
+<text x="62" y="358.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">0 %</text>
+<line x1="72" x2="840" y1="308.4" y2="308.4" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="312.4" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">20 %</text>
+<line x1="72" x2="840" y1="262.8" y2="262.8" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="266.8" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">40 %</text>
+<line x1="72" x2="840" y1="217.2" y2="217.2" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="221.20000000000002" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">60 %</text>
+<line x1="72" x2="840" y1="171.6" y2="171.6" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="175.6" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">80 %</text>
+<line x1="72" x2="840" y1="126.0" y2="126.0" stroke="#d4d5d9" stroke-dasharray="3 4"/>
+<text x="62" y="130.0" text-anchor="end" font-family="Nunito,system-ui,sans-serif" font-size="12" font-weight="400" fill="#696969">100 %</text>
+<text x="136.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Action</text>
+<rect x="91.9" y="308.0" width="19.0" height="46.0" rx="4" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="101.44" y="301.01680672268907" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">20 %</text>
+<rect x="115.0" y="152.8" width="19.0" height="201.2" rx="4" fill="#ffc53d" stroke="#0d0d0d" stroke-width="2"/>
+<text x="124.48" y="145.82352941176472" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">88 %</text>
+<rect x="138.0" y="160.5" width="19.0" height="193.5" rx="4" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="147.52" y="153.48739495798318" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">85 %</text>
+<rect x="161.0" y="152.8" width="19.0" height="201.2" rx="4" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="170.56000000000003" y="145.82352941176472" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">88 %</text>
+<text x="264.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Web search</text>
+<rect x="219.9" y="186.8" width="19.0" height="167.2" rx="4" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="229.44000000000003" y="179.8" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">73 %</text>
+<rect x="243.0" y="143.1" width="19.0" height="210.9" rx="4" fill="#ffc53d" stroke="#0d0d0d" stroke-width="2"/>
+<text x="252.48000000000002" y="136.1" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">92 %</text>
+<rect x="266.0" y="133.6" width="19.0" height="220.4" rx="4" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="275.52" y="126.6" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">97 %</text>
+<rect x="289.0" y="146.9" width="19.0" height="207.1" rx="4" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="298.56" y="139.9" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">91 %</text>
+<text x="392.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Calendar</text>
+<rect x="347.9" y="175.8" width="19.0" height="178.2" rx="4" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="357.44" y="168.81512605042013" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">78 %</text>
+<rect x="371.0" y="135.6" width="19.0" height="218.4" rx="4" fill="#ffc53d" stroke="#0d0d0d" stroke-width="2"/>
+<text x="380.48" y="128.5798319327731" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">96 %</text>
+<rect x="394.0" y="133.7" width="19.0" height="220.3" rx="4" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="403.52" y="126.66386554621849" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">97 %</text>
+<rect x="417.0" y="137.5" width="19.0" height="216.5" rx="4" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="426.56" y="130.49579831932772" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">95 %</text>
+<text x="520.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Email</text>
+<rect x="475.9" y="185.9" width="19.0" height="168.1" rx="4" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="485.44" y="178.89830508474574" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">74 %</text>
+<rect x="499.0" y="143.4" width="19.0" height="210.6" rx="4" fill="#ffc53d" stroke="#0d0d0d" stroke-width="2"/>
+<text x="508.48" y="136.38983050847455" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">92 %</text>
+<rect x="522.0" y="139.5" width="19.0" height="214.5" rx="4" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="531.52" y="132.52542372881354" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">94 %</text>
+<rect x="545.0" y="135.7" width="19.0" height="218.3" rx="4" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="554.56" y="128.66101694915255" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">96 %</text>
+<text x="648.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Files</text>
+<rect x="603.9" y="175.8" width="19.0" height="178.2" rx="4" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="613.4399999999999" y="168.81512605042013" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">78 %</text>
+<rect x="627.0" y="129.8" width="19.0" height="224.2" rx="4" fill="#ffc53d" stroke="#0d0d0d" stroke-width="2"/>
+<text x="636.4799999999999" y="122.83193277310923" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">98 %</text>
+<rect x="650.0" y="135.6" width="19.0" height="218.4" rx="4" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="659.52" y="128.5798319327731" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">96 %</text>
+<rect x="673.0" y="129.8" width="19.0" height="224.2" rx="4" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="682.56" y="122.83193277310923" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">98 %</text>
+<text x="776.0" y="382" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0d0d0d">Database</text>
+<rect x="731.9" y="212.2" width="19.0" height="141.8" rx="4" fill="#4fa8f0" stroke="#0d0d0d" stroke-width="2"/>
+<text x="741.4399999999999" y="205.21848739495798" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">62 %</text>
+<rect x="755.0" y="131.7" width="19.0" height="222.3" rx="4" fill="#ffc53d" stroke="#0d0d0d" stroke-width="2"/>
+<text x="764.4799999999999" y="124.74789915966386" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">97 %</text>
+<rect x="778.0" y="135.6" width="19.0" height="218.4" rx="4" fill="#ff8e3c" stroke="#0d0d0d" stroke-width="2"/>
+<text x="787.52" y="128.5798319327731" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">96 %</text>
+<rect x="801.0" y="133.7" width="19.0" height="220.3" rx="4" fill="#d9376e" stroke="#0d0d0d" stroke-width="2"/>
+<text x="810.56" y="126.66386554621849" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="700" fill="#0d0d0d">97 %</text>
+<text x="24" y="418" text-anchor="start" font-family="Nunito,system-ui,sans-serif" font-size="11" font-weight="400" fill="#696969">Laya-Tasks · huella 73fbecb7b5c8</text>
+</svg>

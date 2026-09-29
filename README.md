@@ -248,7 +248,7 @@ La tercera serie está en [`assets/comparativas/laya-ft-jev-luna/`](assets/compa
 [costo de API](assets/comparativas/laya-ft-jev-luna/costo.png) (también hay SVG).
 Mide una tarea distinta de los tickets anteriores: decidir si responder, pedir datos o usar herramientas,
 y elegir entre web, calendario, correo, archivos y base de datos. Los 120 casos de prueba escritos a mano
-corresponden a [Laya-Finetune `f14d0d5`](https://github.com/zamax14/Laya-Finetune/tree/f14d0d5).
+corresponden a [Laya-Finetune `5b62f86`](https://github.com/zamax14/Laya-Finetune/tree/5b62f86).
 Los cinco modelos respondieron las mismas preguntas y casos (`fingerprint: 72a19374dfd9`).
 Jev y Luna conservan las respuestas de la primera corrida; solo se volvieron a medir los dos checkpoints FT.
 
@@ -269,7 +269,7 @@ la prueba original para poder comparar con las respuestas de API ya guardadas, s
 
 Para repetir esta serie, instala el entorno de `Laya-Finetune`, conserva sus dos checkpoints en
 `.model-cache/` y ejecuta cada modelo con `scripts/benchmark_tool_routing.py` y
-`--task /ruta/a/Laya-Finetune/tasks/tool_routing.yaml` **de la revisión `f14d0d5`**.
+`--task /ruta/a/Laya-Finetune/tasks/tool_routing.yaml` **de la revisión `5b62f86`**.
 `scripts/plot_tool_routing.py --png` regenera
 las imágenes desde los resultados locales o desde el
 [resumen publicado](assets/comparativas/laya-ft-jev-luna/resultados.json).
@@ -280,6 +280,28 @@ reentrenada entra en las gráficas si existe su corrida (`--ajustada`, por defec
 `web/results/laya-reentrenada.json`); `--ajustada none` las dibuja sin ella. Para grabar la corrida de
 otro checkpoint reentrenado:
 `.venv/bin/python scripts/record_benchmark.py laya --device cuda --checkpoint .model-cache/laya-mesa-de-ayuda`.
+
+#### Laya base frente a cada checkpoint ajustado
+
+[`assets/comparativas/laya-base-ft/`](assets/comparativas/laya-base-ft/) compara Laya Multilingual tal como se
+publica con los siete checkpoints de [Laya-Finetune](https://github.com/zamax14/Laya-Finetune), cada uno en la
+prueba reservada de su tarea, que nunca entra al entrenamiento. Todo corre en la misma RTX 4050, sin API.
+La cifra es el número de casos con todas las respuestas correctas:
+
+| Tarea | Casos | Laya base | Ajustada | Detalle |
+|---|---:|---:|---:|---|
+| Mesa de ayuda | 20 | 2 | 11 (FT v4 · 8k) | [tabla](assets/comparativas/laya-base-ft/helpdesk.md) · [gráfica](assets/comparativas/laya-base-ft/helpdesk.png) |
+| Enrutamiento de herramientas | 120 | 5 | 86 (FT · 8k) | [tabla](assets/comparativas/laya-base-ft/tool_routing.md) · [gráfica](assets/comparativas/laya-base-ft/tool_routing.png) |
+| Preselección de contexto | 3.120 | 1.284 | 2.816 (FT · 1k) | [tabla](assets/comparativas/laya-base-ft/context_prefilter.md) · [gráfica](assets/comparativas/laya-base-ft/context_prefilter.png) |
+
+El enrutamiento usa la revisión actual de la prueba, no la de la serie anterior, así que sus cifras no se
+comparan con esa tabla. En la preselección solo el 16 % de los pares son útiles: responder siempre «no»
+ya acierta el 84 %, y el F1 de «útil» (0,27 en la base, 0,66 ajustada) dice más que el acierto.
+
+Para repetirla, con los checkpoints en `.model-cache/` y el entorno de Laya-Finetune:
+`../Laya-Finetune/.venv/bin/python scripts/benchmark_finetunes.py --png`. Las pruebas se leen de
+`../Laya-Tasks/tasks` (`--tasks-dir` para otra ruta), y las filas por caso quedan en `web/results/finetunes/`,
+fuera de git.
 
 #### Contexto largo
 
