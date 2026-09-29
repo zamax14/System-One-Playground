@@ -281,6 +281,28 @@ reentrenada entra en las gráficas si existe su corrida (`--ajustada`, por defec
 otro checkpoint reentrenado:
 `.venv/bin/python scripts/record_benchmark.py laya --device cuda --checkpoint .model-cache/laya-mesa-de-ayuda`.
 
+#### Laya base frente a cada checkpoint ajustado
+
+[`assets/comparativas/laya-base-ft/`](assets/comparativas/laya-base-ft/) compara Laya Multilingual tal como se
+publica con los siete checkpoints de [Laya-Finetune](https://github.com/zamax14/Laya-Finetune), cada uno en la
+prueba reservada de su tarea, que nunca entra al entrenamiento. Todo corre en la misma RTX 4050, sin API.
+La cifra es el número de casos con todas las respuestas correctas:
+
+| Tarea | Casos | Laya base | Ajustada | Detalle |
+|---|---:|---:|---:|---|
+| Mesa de ayuda | 20 | 2 | 11 (FT v4 · 8k) | [tabla](assets/comparativas/laya-base-ft/helpdesk.md) · [gráfica](assets/comparativas/laya-base-ft/helpdesk.png) |
+| Enrutamiento de herramientas | 120 | 5 | 86 (FT · 8k) | [tabla](assets/comparativas/laya-base-ft/tool_routing.md) · [gráfica](assets/comparativas/laya-base-ft/tool_routing.png) |
+| Preselección de contexto | 3.120 | 1.284 | 2.816 (FT · 1k) | [tabla](assets/comparativas/laya-base-ft/context_prefilter.md) · [gráfica](assets/comparativas/laya-base-ft/context_prefilter.png) |
+
+El enrutamiento usa la revisión actual de la prueba, no la de la serie anterior, así que sus cifras no se
+comparan con esa tabla. En la preselección solo el 16 % de los pares son útiles: responder siempre «no»
+ya acierta el 84 %, y el F1 de «útil» (0,27 en la base, 0,66 ajustada) dice más que el acierto.
+
+Para repetirla, con los checkpoints en `.model-cache/` y el entorno de Laya-Finetune:
+`../Laya-Finetune/.venv/bin/python scripts/benchmark_finetunes.py --png`. Las pruebas se leen de
+`../Laya-Tasks/tasks` (`--tasks-dir` para otra ruta), y las filas por caso quedan en `web/results/finetunes/`,
+fuera de git.
+
 #### Contexto largo
 
 `scripts/benchmark_largo.py` pone cada ticket al inicio de un hilo de correo de 1k, 2k, 4k y 8k tokens de relleno de
