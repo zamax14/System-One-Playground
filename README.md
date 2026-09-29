@@ -248,7 +248,7 @@ La tercera serie está en [`assets/comparativas/laya-ft-jev-luna/`](assets/compa
 [costo de API](assets/comparativas/laya-ft-jev-luna/costo.png) (también hay SVG).
 Mide una tarea distinta de los tickets anteriores: decidir si responder, pedir datos o usar herramientas,
 y elegir entre web, calendario, correo, archivos y base de datos. Los 120 casos de prueba escritos a mano
-corresponden a [Laya-Finetune `f14d0d5`](https://github.com/zamax14/Laya-Finetune/tree/f14d0d5).
+corresponden a [Laya-Finetune `5b62f86`](https://github.com/zamax14/Laya-Finetune/tree/5b62f86).
 Los cinco modelos respondieron las mismas preguntas y casos (`fingerprint: 72a19374dfd9`).
 Jev y Luna conservan las respuestas de la primera corrida; solo se volvieron a medir los dos checkpoints FT.
 
@@ -269,7 +269,7 @@ la prueba original para poder comparar con las respuestas de API ya guardadas, s
 
 Para repetir esta serie, instala el entorno de `Laya-Finetune`, conserva sus dos checkpoints en
 `.model-cache/` y ejecuta cada modelo con `scripts/benchmark_tool_routing.py` y
-`--task /ruta/a/Laya-Finetune/tasks/tool_routing.yaml` **de la revisión `f14d0d5`**.
+`--task /ruta/a/Laya-Finetune/tasks/tool_routing.yaml` **de la revisión `5b62f86`**.
 `scripts/plot_tool_routing.py --png` regenera
 las imágenes desde los resultados locales o desde el
 [resumen publicado](assets/comparativas/laya-ft-jev-luna/resultados.json).
